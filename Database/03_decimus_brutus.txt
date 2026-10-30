@@ -1,0 +1,76 @@
+STAKEHOLDER: DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Individual
+Alias note: Shakespeare calls him "Decius Brutus". He is a different man from Marcus Brutus.
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Caesarian insider: one of Caesar's most trusted officers, from the Gallic War onward.
+- Unlike Marcus Brutus or Cassius, he never fought against Caesar. He owed his career entirely to Caesar.
+- By the end of 45 BCE he was among the men Caesar favoured most. Ancient writers report Caesar intended him for a praetorship (45 or 44 BCE; sources differ), the governorship of Cisalpine Gaul and a future consulship.
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY
+------------------------------------------------------------
+- Born c. 85-81 BCE (estimate).
+- Gens Junia: the same clan as Marcus Brutus, claiming descent from Lucius Junius Brutus, who expelled the kings of Rome. The two Brutuses were distant kinsmen, not close relatives.
+- Father: almost certainly Decimus Junius Brutus (consul 77 BCE).
+- Mother: almost certainly Sempronia, portrayed by Sallust as brilliant, educated and reckless; her house was linked with the Catilinarian affair of 63 BCE.
+- Adoption: adopted by Aulus Postumius Albinus (probably the consul of 99 BCE), hence "Albinus".
+- Wife: Paula Valeria, married c. 50 BCE (mentioned in a letter to Cicero).
+
+------------------------------------------------------------
+PERSONAL AMBITIONS
+------------------------------------------------------------
+- The full senatorial career (cursus honorum) up to the consulship, which Caesar's favour appeared to guarantee.
+- Commands and provinces that bring wealth and glory.
+- To be seen as one of Caesar's leading men. In 45 BCE he was publicly honoured by riding near Caesar on the return from Spain.
+- Plutarch describes him as not especially enterprising or bold in general, but trusted, well connected and wealthy.
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- Julius Caesar: commander, patron and benefactor. The core of his career.
+- Caesar's other senior officers: Antony, Trebonius and others from the Gallic campaigns.
+- Gens Junia network, including a distant connection to Marcus Brutus.
+- Cicero: polite connections (letters mention his marriage).
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- No major personal feud is recorded before 44 BCE.
+- Competition for Caesar's favour with other Caesarian officers (Antony, Lepidus, Dolabella and others).
+- Opponents on the battlefield: the Veneti and Gallic tribes; the Pompeian cause at Massilia; the Bellovaci.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- Strong. An experienced naval and land commander and a former provincial governor with ties to Gaul's legions.
+- 56 BCE: commanded Caesar's fleet against the Veneti of Brittany and won the decisive naval battle, Caesar's first major sea victory.
+- 52 BCE: served against Vercingetorix's revolt.
+- 49 BCE: commanded Caesar's fleet at the siege of Massilia, winning two naval battles against larger forces until the city surrendered.
+- 48-46 BCE: governor of Transalpine (Further) Gaul; suppressed a revolt of the Bellovaci (46).
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE
+------------------------------------------------------------
+- Julius Caesar: very close and trusted; benefactor.
+- Mark Antony: fellow Caesarian officer; both travelled with Caesar from Narbo into Italy in 45 BCE.
+- Young Octavius (Caesar's great-nephew): also in Caesar's travelling party in 45 BCE.
+- Marcus Brutus: distant kinsman in the Junii; different political history (Marcus fought for Pompey, Decimus for Caesar).
+- Sempronia: mother.
+- Paula Valeria: wife.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (to end of 45 BCE)
+------------------------------------------------------------
+- c. 85-81 BCE: born.
+- 56 BCE: defeats the Veneti at sea for Caesar.
+- 52 BCE: campaigns against Vercingetorix.
+- c. 50 BCE: marries Paula Valeria.
+- 49 BCE: wins the naval battles at Massilia; the city falls.
+- 48-46 BCE: governs Transalpine Gaul; defeats the Bellovaci.
+- 45 BCE: honoured by Caesar on his return from Spain; in line for high office.
+
+Sources: Caesar, Gallic War 3.11-16 and 7.9; Caesar, Civil War 1.36, 1.56-58, 2.3-7; Plutarch, Life of Antony 11; Cicero, Letters to Friends 8.7; Smith, Dictionary of Greek and Roman Biography ("Brutus 18").

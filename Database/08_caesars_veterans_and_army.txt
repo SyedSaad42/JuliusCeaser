@@ -1,0 +1,70 @@
+STAKEHOLDER: CAESAR'S VETERANS AND ARMY
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Group
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- The real foundation of Caesar's power. Loyal to Caesar personally rather than to the Senate or the state.
+- Not a formal political body, but their wishes (pay, land and honour) carried enormous weight.
+- Two groups by 45 BCE:
+  * Serving legions in the provinces and Italy, including forces being gathered for Caesar's planned war against Parthia.
+  * Veterans discharged after the civil wars, being settled on land in Italy and the provinces.
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY (COMPOSITION)
+------------------------------------------------------------
+- Mostly Roman citizens from rural Italy; many legions recruited in Cisalpine Gaul (northern Italy).
+- The Gallic veterans had served with Caesar since 58 BCE, some for ten years or more.
+- Famous legions: the Tenth (Caesar's favourite), plus the Seventh, Eighth, Ninth and others. The Fifth "Alaudae" ("Larks") was raised from Transalpine Gauls, who were given citizenship.
+- Centurions were the backbone: highly respected, some promoted to equestrian rank or into Caesar's new Senate.
+
+------------------------------------------------------------
+PERSONAL AMBITIONS (COLLECTIVE INTERESTS)
+------------------------------------------------------------
+- Pay and bonuses. Caesar doubled legionary pay (to 225 denarii a year).
+- Discharge with land: a farm, the traditional veteran's reward.
+- Plunder and donatives (cash gifts) after victories.
+- Recognition: glory, decorations and promotion.
+- Security of their land grants, which depended on Caesar's arrangements staying in force.
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- Julius Caesar: their general and patron; intense personal loyalty and pride in shared campaigns.
+- Caesar's senior officers, especially Mark Antony (very popular with soldiers) and Lepidus (master of the horse in 46-44, commanding troops near Rome).
+- Caesarian colonies: veterans settled together kept their comradeship and could be quickly remobilised.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- The Pompeian armies they defeated (Pharsalus 48, Thapsus 46, Munda 45).
+- Tension with Caesar himself over delayed rewards: in 47 BCE several veteran legions, including the Tenth, mutinied in Campania demanding discharge and payment, and killed officers sent to calm them. Caesar ended the mutiny by addressing them as "citizens" (Quirites) instead of "fellow soldiers", shaming them back into service.
+- Civilians whose land was taken for veteran colonies.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- Decisive. These were the most battle-hardened troops in the Mediterranean.
+- Gallic War (58-50 BCE), including Alesia (52); civil war campaigns at Ilerda (49), Dyrrhachium and Pharsalus (48), Alexandria (48-47), Zela (47, "veni, vidi, vici"), Thapsus (46) and Munda (45). Munda was the hardest fight of all; Caesar said he had often fought for victory, but there he fought for his life.
+- By late 45 BCE many legions were being concentrated for a planned eastern campaign against Parthia (and Dacia), so a large army remained under arms.
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE (AND GROUPS)
+------------------------------------------------------------
+- Julius Caesar: loyal and proud; Caesar was generous but also strict, punishing mutiny and cowardice.
+- Mark Antony: popular with them; commanded many in Italy and at Pharsalus.
+- Lepidus: commanded troops near Rome as master of the horse.
+- The Roman people: veterans in Rome for triumphs mixed with the crowd; their presence was intimidating.
+- The Senate: viewed with indifference or contempt as a body that had tried to strip their general of his command in 49 BCE.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (49-45 BCE)
+------------------------------------------------------------
+- January 49 BCE: cross the Rubicon with Caesar.
+- 49-48 BCE: Spain, Dyrrhachium, Pharsalus.
+- 47 BCE: mutiny in Campania; reconciled by Caesar's "Quirites" speech; sent to Africa.
+- 46 BCE: Thapsus. At the quadruple triumph each legionary receives 24,000 sesterces (Suetonius), on top of 2,000 promised at the start of the war, with more for centurions and officers. Soldiers sing rude songs about Caesar during the triumph, as tradition allowed.
+- 45 BCE: Munda. Many veterans are discharged and settled in colonies in Italy and the provinces; others are kept under arms for the planned Parthian war.
+
+Sources: Caesar, Gallic War and Civil War; Suetonius, Julius 38, 49, 51, 65-70; Appian, Civil Wars 2.92-94 (the mutiny of 47 BCE); Cassius Dio, Roman History 42.52-55 and 43.

@@ -1,0 +1,59 @@
+STAKEHOLDER: PUBLIUS SERVILIUS CASCA LONGUS (CASCA)
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Individual
+
+DATA WARNING
+Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses.
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Senator of modest rank.
+- Elected tribune of the plebs for the year 44 BCE. Tribunes took office on 10 December, so he entered office on 10 December 45 BCE, within this cutoff.
+- No recorded loyalty to either Caesar or the optimates before this. As tribune he held the right to veto and was legally sacrosanct (physically inviolable).
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY
+------------------------------------------------------------
+- Gens Servilia, plebeian branch (the Servilii Cascae). He was NOT from the patrician Servilii Caepiones, the family of Servilia (Marcus Brutus's mother); no close relationship is attested.
+- Brother: Gaius Servilius Casca, also active in politics.
+- An earlier Casca was tribune in 212 BCE; the family was respectable but not prominent.
+- Wife, children and other details: unknown.
+
+------------------------------------------------------------
+PERSONAL AMBITIONS
+------------------------------------------------------------
+- Unknown beyond the normal goal of a senatorial career. Holding the tribunate suggests he wanted to rise in public life.
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- His brother Gaius.
+- Otherwise none documented before 44 BCE.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- None documented before 44 BCE.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- None documented. No commands recorded.
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE
+------------------------------------------------------------
+- Gaius Servilius Casca: brother.
+- Fellow tribunes for 44 BCE (took office 10 December 45 BCE).
+- No documented personal relationship with Caesar, Brutus, Cassius, Antony or Cicero before the cutoff.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (to end of 45 BCE)
+------------------------------------------------------------
+- Mid-to-late 45 BCE: elected tribune of the plebs for 44.
+- 10 December 45 BCE: enters office as tribune.
+
+Suggested handling in your graph: give each Casca attribute a confidence of "unknown" rather than leaving it empty, so the model knows the gap is real and not missing data.
+
+Sources: Broughton, Magistrates of the Roman Republic, vol. 2 (tribunes of 44 BCE), via spqrome.org; Smith, Dictionary of Greek and Roman Biography ("Casca").

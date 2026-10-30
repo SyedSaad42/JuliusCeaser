@@ -1,0 +1,78 @@
+STAKEHOLDER: FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Group
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Senators, equestrians and officers who fought for Pompey and the Senate against Caesar (49-45 BCE) and were then pardoned under Caesar's policy of clemency (clementia).
+- Now inside Caesar's system: allowed home, often given back their property, and some given offices or provinces.
+- Their political position was ambiguous. They owed their lives and careers to Caesar's mercy, but they had fought for the Senate's traditional authority, which Caesar's dominance had ended.
+- Those never reconciled: Sextus Pompey, still at large in Spain after Munda; and the dead (Pompey, Cato, Scipio, Labienus, Afranius, Petreius, Gnaeus Pompey the younger).
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY (COMPOSITION)
+------------------------------------------------------------
+- Many came from Rome's oldest noble families, the core of the optimate aristocracy.
+- Key members by the end of 45 BCE:
+  * Marcus Junius Brutus: fought at Pharsalus; pardoned immediately afterwards (48 BCE); governor of Cisalpine Gaul for Caesar (46-45); married Porcia, Cato's daughter (45).
+  * Gaius Cassius Longinus: Pompeian fleet commander; pardoned (48/47); later Caesar's legate.
+  * Cicero: pardoned (47); writing and pleading for others.
+  * Marcus Claudius Marcellus (consul 51 BCE): a fierce opponent of Caesar; pardoned in the Senate (46) after pleas; killed at Piraeus (May 45) by an associate in a private quarrel, before returning to Rome.
+  * Quintus Ligarius: fought against Caesar in Africa; pardoned (46) after Cicero's speech.
+  * Marcus Terentius Varro: scholar and Pompeian commander in Spain; pardoned and appointed to organise Rome's first public library.
+  * Servius Sulpicius Rufus: a cautious moderate; governed Achaea for Caesar (46-45).
+  * King Deiotarus of Galatia: a Pompeian ally, defended by Cicero before Caesar (November 45).
+- Family ties: many were linked by marriage to Cato's family (Porcia married Brutus in 45) or to Servilia's network (Brutus, Cassius's wife Junia Tertia).
+
+------------------------------------------------------------
+PERSONAL AMBITIONS (COLLECTIVE INTERESTS)
+------------------------------------------------------------
+- Safety: their lives and property depended on Caesar's continued goodwill.
+- Restoration of status (dignitas): getting back into office and the Senate.
+- Honour: proud men felt humiliated by owing their rank to one man's mercy. Clemency was a virtue of kings, a sign that they were no longer equals.
+- For the most principled: keeping faith with Cato's memory and the free Republic. Cato's suicide at Utica (April 46 BCE), rather than accept Caesar's pardon, made him a martyr. Cicero and Brutus wrote works praising him; Caesar answered with a pamphlet attacking him, the Anticato (45 BCE).
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- With each other: an informal network of former comrades, families and intellectuals.
+- With Cicero as their main advocate before Caesar.
+- With Caesar: dependent alliances. Caesar allowed those not yet pardoned to return to Italy and even to hold magistracies and commands (Suetonius 75).
+- With Pompey's memory: Caesar restored Pompey's statues, which the crowd had thrown down.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- Caesar's loyalists, who had won the war and resented former enemies getting offices and favour.
+- Caesar's dominance itself, a rivalry of principle that was rarely voiced openly.
+- Among themselves: the moderates who accepted pardon vs. the irreconcilables who fought on to Munda.
+- With Antony in particular, who bought confiscated Pompeian property, including Pompey's own house.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- As a group, little by late 45 BCE: their armies were destroyed at Pharsalus (48), Thapsus (46) and Munda (45).
+- Some individuals were experienced commanders (Cassius, Brutus as a governor).
+- Sextus Pompey still led a small guerrilla force in Spain, the last active Pompeian resistance.
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE (AND GROUPS)
+------------------------------------------------------------
+- Julius Caesar: pardoner and benefactor, and the man who destroyed their cause. Caesar boasted of his clemency, from Corfinium (49 BCE), where he released Domitius Ahenobarbus, to Pharsalus and after. Not all were spared: some prominent opponents captured in Africa (46 BCE), including Faustus Sulla and Afranius, were killed, whether or not on Caesar's orders.
+- Cicero: their spokesman.
+- Marcus Brutus: emerging as the most respected figure among them, through his virtue, his lineage and his link to Cato.
+- The Senate: they made up a significant, though diluted, part of it.
+- The Roman people: Pompey was still remembered with some affection.
+- Caesar's veterans: former battlefield enemies.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (49-45 BCE)
+------------------------------------------------------------
+- 49 BCE: leave Rome with Pompey; Caesar pardons the Pompeians captured at Corfinium.
+- 48 BCE: defeated at Pharsalus; Pompey killed in Egypt; many surrender and are pardoned (Brutus, then Cassius).
+- 47 BCE: Cicero pardoned.
+- 46 BCE: defeated at Thapsus; Cato's suicide; Scipio dies; pardons of Marcellus and Ligarius.
+- 45 BCE: defeated at Munda; Labienus and Gnaeus Pompey die; Sextus escapes. Survivors are allowed home and into office. Brutus marries Porcia. Cicero defends Deiotarus.
+
+Sources: Caesar, Civil War; Cicero, Pro Marcello, Pro Ligario, Pro Rege Deiotaro and Letters to Friends 4.12 (the death of Marcellus); Suetonius, Julius 75; Plutarch, Life of Brutus 6-7 and Life of Cato the Younger.

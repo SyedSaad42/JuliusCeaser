@@ -1,0 +1,113 @@
+STAKEHOLDER: GAIUS JULIUS CAESAR
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Individual
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Master of the Roman world after victories at Pharsalus (48), Thapsus (46) and Munda (45 BCE).
+- Dictator: voted a dictatorship for ten years in 46 BCE (renewed annually), plus sole consul for most of 45 BCE (resigned in October in favour of suffect consuls). Designated consul for 44 BCE with Antony as colleague.
+- Pontifex maximus (chief priest) since 63 BCE; "prefect of morals" since 46.
+- Popularis by career: built his rise on the people, the tribunes and his army, against the optimate leadership of the Senate.
+- Overwhelming honours from the Senate after Munda (April 45 BCE): 50 days of thanksgiving, the title Liberator, the permanent use of "Imperator" in his name, triumphal dress at festivals, a laurel wreath at all times, a statue in the temple of Quirinus inscribed "to the unconquered god", a statue among the kings on the Capitol, and an ivory statue in the procession of the gods. Many Romans found some of these honours troubling.
+- Policy of clemency (clementia) towards defeated Romans: he pardoned most enemies and allowed exiles home, setting himself apart from the bloody dictatorship of Sulla.
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY
+------------------------------------------------------------
+- Born 12 or 13 July 100 BCE.
+- Gens Julia: an ancient patrician clan claiming descent from Iulus, son of Aeneas, and so from the goddess Venus. The family was old but not recently powerful.
+- Father: Gaius Julius Caesar (praetor c. 92 BCE), died 85 BCE.
+- Mother: Aurelia, of the Aurelii Cottae; highly respected; died 54 BCE.
+- Aunt: Julia, wife of Gaius Marius, the great popular general. This tied Caesar to the Marian (popular) faction.
+- Wives:
+  * Cornelia, daughter of Cinna (Marius's ally); Caesar refused Sulla's order to divorce her and fled. She died c. 69 BCE.
+  * Pompeia, Sulla's granddaughter; divorced in 62 BCE after the Bona Dea scandal involving Clodius ("Caesar's wife must be above suspicion").
+  * Calpurnia, daughter of Lucius Calpurnius Piso (consul 58); married 59 BCE.
+- Daughter: Julia, married to Pompey (59 BCE) to seal their alliance; died in childbirth in 54 BCE, weakening the bond with Pompey.
+- Son (claimed): Caesarion, born to Cleopatra VII of Egypt (47 BCE); Caesar did not formally acknowledge him in Rome. Cleopatra was staying in Rome in Caesar's gardens across the Tiber (46-45 BCE), which caused scandal.
+- Great-nephew: Gaius Octavius, grandson of his sister Julia, whom Caesar favoured; he joined Caesar in Spain (45 BCE).
+- Relatives through his mother's line: Mark Antony (distant kinsman through Antony's mother Julia); Lucius Julius Caesar.
+
+------------------------------------------------------------
+PERSONAL AMBITIONS
+------------------------------------------------------------
+- Dignitas (personal standing and honour) above all: he said he went to war in 49 BCE to defend his dignity and the rights of the tribunes.
+- Pre-eminence: Plutarch tells that, passing an Alpine village, he said he would rather be first there than second in Rome.
+- Glory to rival Alexander the Great: Suetonius says he wept as quaestor in Spain (69 BCE) because at his age Alexander had already conquered the world.
+- Grand plans by late 45 BCE: a war against Parthia (to avenge Crassus) and Dacia; codifying Roman law; public libraries (Varro appointed); draining the Pontine marshes; a new harbour at Ostia; a canal through the Isthmus of Corinth; rebuilding Rome on a grand scale; new colonies, including at Carthage and Corinth.
+- Reform: the Julian calendar (from 1 January 45 BCE); grain, debt and colonisation reforms; enlarging the Senate and the magistracies.
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- First Triumvirate (60 BCE): an informal pact with Pompey and Crassus; renewed at Luca (56). It ended with Crassus's death (53) and Julia's death (54).
+- His army: the deepest alliance of all; personal loyalty of the legions.
+- The urban plebs and the tribunes.
+- His circle of agents and officers: Antony, Lepidus (master of the horse from 46), Decimus Brutus, Trebonius, Dolabella, Hirtius, Pansa, and his trusted aides Balbus and Oppius.
+- Pardoned Pompeians: Marcus Brutus, Cassius, Cicero and others, now part of his government.
+- Foreign allies: Cleopatra in Egypt; client kings in the East.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- Pompey: ally, then son-in-law, then enemy; defeated at Pharsalus (48) and killed in Egypt. Caesar was said to have wept when shown Pompey's head.
+- Cato: his most principled opponent; killed himself at Utica (46). Caesar later wrote the Anticato (45 BCE) to answer Cicero's and Brutus's praise of Cato.
+- The optimates: Bibulus (his consular colleague in 59), Domitius Ahenobarbus, Metellus Scipio, Lentulus Crus and others.
+- Labienus: his best lieutenant in Gaul, who defected to Pompey in 49; killed at Munda (45).
+- The sons of Pompey: Gnaeus (killed after Munda, 45) and Sextus (still at large in Spain).
+- Senate traditionalists who resented his power, generally in silence. At his Spanish triumph (October 45) the tribune Pontius Aquila refused to stand for him, and Caesar mocked him angrily for days.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- Supreme. The most successful general of his age, with the loyalty of the largest and most experienced army in the Mediterranean.
+- Gallic War (58-50 BCE): conquered Gaul, crossed the Rhine and invaded Britain (55 and 54); defeated Vercingetorix at Alesia (52).
+- Civil war: crossed the Rubicon (January 49); won in Spain at Ilerda (49); won at Pharsalus (48); won the Alexandrian war (48-47); won at Zela ("veni, vidi, vici", 47), Thapsus (46) and Munda (45, his hardest battle).
+- By late 45 BCE he was concentrating legions for the Parthian war.
+- Personal style: fast marches, personal courage, generosity to soldiers (pay doubled; large donatives), but iron discipline (ended the 47 BCE mutiny by calling his soldiers "citizens").
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE
+------------------------------------------------------------
+- Marcus Brutus: pardoned and favoured him; Servilia's son; Caesar spared him at Pharsalus out of regard for her.
+- Servilia: long-time lover.
+- Cassius: pardoned former enemy; made him a legate.
+- Mark Antony: kinsman and lieutenant; strained in 46, reconciled in 45; colleague-designate in the consulship for 44.
+- Decimus Brutus: one of his most trusted officers since Gaul.
+- Cicero: pardoned him (47); polite relations; visited his villa near Puteoli in December 45; admired his writing; answered his Cato with the Anticato.
+- Lepidus: master of the horse; trusted deputy.
+- Calpurnia: wife.
+- Cleopatra: lover and ally; in Rome 46-45.
+- Octavius: favoured great-nephew.
+- Labienus: old lieutenant turned enemy.
+- The Senate: dominates it; enlarged it to about 900 members; on 31 December 45 BCE made Caninius Rebilus consul for a few hours after a consul's death.
+- The Roman people: patron through laws, games and gifts.
+- The army: their general and benefactor.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (to end of 45 BCE)
+------------------------------------------------------------
+- 100 BCE: born.
+- c. 84-82 BCE: marries Cornelia; defies Sulla; flees and is spared.
+- 75 BCE: captured by pirates; after ransom, hunts them down and crucifies them.
+- 69 BCE: quaestor in Further Spain.
+- 65 BCE: aedile; lavish games; huge debts.
+- 63 BCE: elected pontifex maximus; argues in the Senate against executing the Catilinarians.
+- 62 BCE: praetor; divorces Pompeia.
+- 61-60 BCE: governor in Spain.
+- 60 BCE: First Triumvirate.
+- 59 BCE: consul; land laws over Bibulus's opposition; marries Calpurnia; Julia marries Pompey.
+- 58-50 BCE: conquers Gaul.
+- January 49 BCE: crosses the Rubicon; civil war; dictator for 11 days.
+- 48 BCE: dictator; wins at Pharsalus; Pompey killed in Egypt; Alexandrian war; Cleopatra.
+- 47 BCE: Zela; ends the veteran mutiny; pardons Cicero.
+- 46 BCE: wins at Thapsus; Cato dies; quadruple triumph; dictator for ten years; calendar reform; Forum of Caesar dedicated.
+- 1 January 45 BCE: Julian calendar takes effect.
+- 17 March 45 BCE: wins at Munda; Labienus and Gnaeus Pompey killed.
+- Mid-45 BCE: returns through Gaul and Italy with Antony, Decimus Brutus and Octavius; meets Marcus Brutus.
+- October 45 BCE: Spanish triumph over Romans, which resentful Romans criticised; resigns the sole consulship.
+- December 45 BCE: visits Cicero at Puteoli.
+- 31 December 45 BCE: arranges the hours-long consulship of Caninius Rebilus.
+
+Sources: Suetonius, Julius 1-45, 50, 52, 54, 75-78; Plutarch, Life of Caesar 1-57; Cassius Dio, Roman History 43; Cicero, Letters to Atticus 13.52; Appian, Civil Wars 2.
