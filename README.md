@@ -29,7 +29,3 @@ Early development. The simulation and its data model are still being built.
 - [Python](https://www.python.org/)
 - [HyperNetX](https://hypernetx.readthedocs.io/)
 
-## Contributing
-
-Ideas, feedback, and contributions are welcome. Open an issue to discuss a
-proposal or report a problem.
