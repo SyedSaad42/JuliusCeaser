@@ -1,0 +1,618 @@
+[
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "political_position",
+    "text": "- Senator of praetorian-track standing, from the plebeian nobility (nobilis).\n- Originally an optimate: sided with Pompey and the Senate's leaders in the civil war (49-48 BCE).\n- Switched sides: surrendered to Caesar after Pharsalus (48 or 47 BCE), was pardoned and served as one of Caesar's legates.\n- In 46-45 BCE he lived quietly in Italy (Rome in 46, Brundisium in 45), holding no major command. A pardoned former enemy, now inside the Caesarian system but not part of its inner circle.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "family_ancestry",
+    "text": "- Gens Cassia: an old plebeian clan with several consuls. Family tradition included Spurius Cassius Vecellinus (early Republic, executed for allegedly seeking kingship) and Lucius Cassius Longinus Ravilla, a famously strict judge (\"cui bono?\").\n- Father: uncertain. Sometimes identified with an earlier Gaius Cassius Longinus (consul 73 BCE), but this is not secure.\n- Brothers: a Lucius Cassius Longinus is known; a Quintus Cassius Longinus (Caesarian tribune in 49 BCE) was a cousin.\n- Wife: Junia Tertia (\"Tertulla\"), daughter of Servilia and half-sister of Marcus Brutus. This made Cassius Brutus's brother-in-law and tied him to Servilia's household. Gossip in Suetonius links Caesar with Tertia; it is gossip, not established fact.\n- Children: at least one son.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "personal_ambitions",
+    "text": "- Military glory and recognition. He had real battlefield achievements in the East and expected honours to match.\n- High office: the praetorship and then the consulship, the normal goals of a man of his rank.\n- Sensitive about status and slights. Plutarch reports a grievance: lions Cassius had gathered at Megara for his planned aedile's games were seized when Caesar's general Calenus took the city (48 BCE).\n- Intellectual: studied Greek philosophy and rhetoric at Rhodes; by 46-45 BCE he had become an Epicurean and discussed Epicureanism with Cicero in letters (January 45 BCE).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "political_alliances",
+    "text": "- Crassus (died 53 BCE): his first patron; Cassius served as his quaestor.\n- Pompey and the optimates (49-48 BCE): his side in the civil war.\n- Caesar (from 48/47 BCE): pardoned him and employed him as a legate.\n- Brutus: family alliance by marriage. Their relationship was close but not always warm.\n- Cicero: friendly correspondence; Cicero congratulated him on his Syrian victory in 51 BCE.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "rivalries",
+    "text": "- With Caesar's followers who outranked him despite fewer achievements. As a pardoned enemy he competed for favour against Caesar's long-standing loyalists.\n- With Brutus at times: they were rivals for honours, even though they were in-laws.\n- Ancient writers describe him as quick-tempered, proud, and openly hostile to anyone claiming absolute power. Plutarch tells a schoolboy story in which Cassius beat Faustus Sulla for boasting about his father Sulla's dictatorship.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "military_influence",
+    "text": "- One of the most capable officers of his generation.\n- Carrhae (53 BCE): quaestor to Crassus. He reportedly advised against the route and tactics that led to disaster, then led survivors out after the defeat.\n- Syria (52-51 BCE): as acting governor he held the province with weak forces, defended Antioch and defeated a Parthian force in 51 BCE. He was accused of harsh exactions.\n- Civil war (48 BCE): commanded a Pompeian fleet drawn from Syria, Phoenicia and Cilicia; burned Caesar's ships at Messana in Sicily and attacked others at Vibo.\n- In 45 BCE he held no army. His influence was reputation and experience, not troops.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "relationships",
+    "text": "- Julius Caesar: former enemy who pardoned him. Benefactor, but Cassius owed his position to Caesar's clemency, which can sit uneasily with a proud man.\n- Marcus Brutus: brother-in-law through Junia Tertia; same family network via Servilia.\n- Servilia: mother-in-law, a powerful political hostess and Caesar's former lover.\n- Cicero: friendly; exchanged letters on philosophy and politics.\n- Crassus: dead patron whose defeat he witnessed.\n- Pompey: dead former commander.\n- Mark Antony: no close tie recorded before 44 BCE.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "01_cassius.txt",
+    "stakeholder": "GAIUS CASSIUS LONGINUS",
+    "section": "historical_actions",
+    "text": "- c. 86-85 BCE (uncertain): born.\n- Youth: studies at Rhodes; learns Greek.\n- 53 BCE: quaestor under Crassus; survives Carrhae; escapes to Syria.\n- 52-51 BCE: defends Syria; victory over Parthians near Antioch (51).\n- 49 BCE: tribune of the plebs; leaves Rome with Pompey's party.\n- 48 BCE: Pompeian fleet commander; raids Caesar's ships in Sicily.\n- 48/47 BCE: surrenders to Caesar (Smith places this at the Hellespont; modern scholars debate the place and date) and is pardoned.\n- 47 BCE: serves Caesar as a legate in the East.\n- 46 BCE: in Rome; does not fight in Africa.\n- 45 BCE: at Brundisium; corresponds with Cicero as a new Epicurean.\n\nSources: Plutarch, Life of Brutus 7-9 and Life of Crassus; Cicero, Letters to Friends 15 (letters to and from Cassius); Suetonius, Julius 50; Smith, Dictionary of Greek and Roman Biography (\"Longinus, Cassius 12\").\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "political_position",
+    "text": "- Leading Caesarian: one of Caesar's most important lieutenants since the start of the civil war.\n- Popularis by alignment: identified with Caesar's faction, the tribunes and the urban crowd rather than the Senate's old guard.\n- Offices: quaestor (52/51 BCE), augur (50), tribune of the plebs (49), master of the horse (magister equitum) under Caesar's dictatorship (48-47), effectively running Italy.\n- Out of favour in 46 BCE; back in favour in 45 BCE and chosen by Caesar as his colleague in the consulship for 44 BCE.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "family_ancestry",
+    "text": "- Born c. 83 BCE (estimate).\n- Grandfather: Marcus Antonius the orator (consul 99 BCE), one of Rome's great speakers, killed by Marius's supporters in 87 BCE.\n- Father: Marcus Antonius \"Creticus\", whose failed command against pirates near Crete earned a mocking nickname; died when Antony was young.\n- Mother: Julia, of the Julii Caesares (sister of Lucius Julius Caesar, consul 64 BCE). Antony was a distant relative of Caesar through her.\n- Stepfather: Publius Cornelius Lentulus Sura, executed in 63 BCE on Cicero's orders as a Catilinarian. This is the root of Antony's personal hatred of Cicero.\n- Brothers: Gaius and Lucius Antonius, both politically active.\n- Marriages: Fadia (early, uncertain); his cousin Antonia, daughter of Gaius Antonius Hybrida (Cicero's consular colleague in 63), divorced c. 47 after Antony accused her of an affair with Dolabella; Fulvia (c. 46 BCE), widow of Clodius and then of Curio, wealthy and politically formidable. He also lived openly with the actress Cytheris.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "personal_ambitions",
+    "text": "- To be first among Caesar's men and Caesar's natural successor in influence.\n- The consulship (achieved for 44 BCE) and great commands.\n- Wealth to fund a lavish lifestyle: chronically in debt. As a youth his debts were paid by his friend Curio.\n- Popularity with soldiers and the crowd: he cultivated an image of a generous, hard-drinking, Herculean soldier (the Antonii claimed descent from Hercules).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "political_alliances",
+    "text": "- Julius Caesar: patron, commander and distant kinsman. The central alliance of his career.\n- Gaius Scribonius Curio (died 49 BCE): close friend and political ally; Antony later married Curio's widow, Fulvia.\n- Fulvia: wife and political partner from c. 46 BCE, bringing the networks of Clodius and Curio and the urban plebs.\n- His brothers Gaius and Lucius.\n- Gabinius: his first commander in the East.\n- Caesar's veterans: strong personal popularity with the soldiers.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "rivalries",
+    "text": "- Cicero: deep personal enmity, rooted in his stepfather's execution in 63 BCE.\n- Publius Cornelius Dolabella: bitter rival. In 47 BCE Antony crushed Dolabella's debt-relief riots in the Forum with soldiers (many killed), and he accused Dolabella of adultery with his wife Antonia.\n- Other Caesarians competing for Caesar's favour, including Lepidus, who replaced him as master of the horse.\n- Caesar himself (temporarily, 46 BCE): Caesar was displeased with his conduct in Italy and made him pay in full for Pompey's confiscated house and property, which Antony had bought expecting not to pay.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "military_influence",
+    "text": "- Proven cavalry and field commander.\n- 57-55 BCE: commanded cavalry under Gabinius in Syria; fought in Judaea against Aristobulus; helped restore Ptolemy XII to the throne of Egypt (55).\n- 54-50 BCE: served under Caesar in Gaul, including the campaigns of 52-51.\n- 49 BCE: left in command of Italy while Caesar fought in Spain.\n- 48 BCE: brought reinforcements across the Adriatic to Caesar; commanded the left wing at Pharsalus.\n- 47 BCE: as master of the horse, controlled troops in Italy, but failed to prevent the mutiny of Caesar's veteran legions in Campania.\n- Very popular with ordinary soldiers.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "relationships",
+    "text": "- Julius Caesar: patron and kinsman. Strained in 46, restored in 45: Antony met Caesar at Narbo on his return from Spain and rode in his carriage into Italy, with Decimus Brutus and young Octavius following.\n- Cicero: enemy.\n- Dolabella: enemy and personal rival.\n- Fulvia: wife and political ally.\n- Curio: dead friend.\n- Decimus Brutus: fellow Caesarian officer; travelled with Caesar alongside him in 45.\n- Lepidus: fellow Caesarian, his successor as master of the horse.\n- Brutus and Cassius: no close relationship recorded.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "02_mark_antony.txt",
+    "stakeholder": "MARCUS ANTONIUS (MARK ANTONY)",
+    "section": "historical_actions",
+    "text": "- c. 83 BCE: born.\n- 63 BCE: stepfather Lentulus executed.\n- 58-55 BCE: Greece, then cavalry command in Syria, Judaea and Egypt.\n- 54 BCE: joins Caesar in Gaul.\n- 52/51 BCE: quaestor, serving in Gaul.\n- 50 BCE: elected augur and tribune with Caesar's support.\n- 1-7 January 49 BCE: as tribune, vetoes the Senate's order that Caesar give up his army; threatened, he flees to Caesar. His flight is Caesar's stated reason for crossing the Rubicon.\n- 49 BCE: governs Italy for Caesar.\n- 48 BCE: Pharsalus, left wing.\n- 48-47 BCE: master of the horse; governs Italy; suppresses Dolabella's riots; fails to stop the veteran mutiny.\n- 46 BCE: out of favour; pays for Pompey's property; marries Fulvia; does not join the African campaign.\n- 45 BCE: reconciled with Caesar at Narbo; designated consul for 44 with Caesar.\n\nSources: Plutarch, Life of Antony 2-11; Suetonius, Julius; Smith, Dictionary of Greek and Roman Biography (\"Antonius 12\"). Note: much of the hostile detail about Antony's private life comes from Cicero, his enemy, and is probably exaggerated.\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "political_position",
+    "text": "- Caesarian insider: one of Caesar's most trusted officers, from the Gallic War onward.\n- Unlike Marcus Brutus or Cassius, he never fought against Caesar. He owed his career entirely to Caesar.\n- By the end of 45 BCE he was among the men Caesar favoured most. Ancient writers report Caesar intended him for a praetorship (45 or 44 BCE; sources differ), the governorship of Cisalpine Gaul and a future consulship.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "family_ancestry",
+    "text": "- Born c. 85-81 BCE (estimate).\n- Gens Junia: the same clan as Marcus Brutus, claiming descent from Lucius Junius Brutus, who expelled the kings of Rome. The two Brutuses were distant kinsmen, not close relatives.\n- Father: almost certainly Decimus Junius Brutus (consul 77 BCE).\n- Mother: almost certainly Sempronia, portrayed by Sallust as brilliant, educated and reckless; her house was linked with the Catilinarian affair of 63 BCE.\n- Adoption: adopted by Aulus Postumius Albinus (probably the consul of 99 BCE), hence \"Albinus\".\n- Wife: Paula Valeria, married c. 50 BCE (mentioned in a letter to Cicero).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "personal_ambitions",
+    "text": "- The full senatorial career (cursus honorum) up to the consulship, which Caesar's favour appeared to guarantee.\n- Commands and provinces that bring wealth and glory.\n- To be seen as one of Caesar's leading men. In 45 BCE he was publicly honoured by riding near Caesar on the return from Spain.\n- Plutarch describes him as not especially enterprising or bold in general, but trusted, well connected and wealthy.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "political_alliances",
+    "text": "- Julius Caesar: commander, patron and benefactor. The core of his career.\n- Caesar's other senior officers: Antony, Trebonius and others from the Gallic campaigns.\n- Gens Junia network, including a distant connection to Marcus Brutus.\n- Cicero: polite connections (letters mention his marriage).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "rivalries",
+    "text": "- No major personal feud is recorded before 44 BCE.\n- Competition for Caesar's favour with other Caesarian officers (Antony, Lepidus, Dolabella and others).\n- Opponents on the battlefield: the Veneti and Gallic tribes; the Pompeian cause at Massilia; the Bellovaci.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "military_influence",
+    "text": "- Strong. An experienced naval and land commander and a former provincial governor with ties to Gaul's legions.\n- 56 BCE: commanded Caesar's fleet against the Veneti of Brittany and won the decisive naval battle, Caesar's first major sea victory.\n- 52 BCE: served against Vercingetorix's revolt.\n- 49 BCE: commanded Caesar's fleet at the siege of Massilia, winning two naval battles against larger forces until the city surrendered.\n- 48-46 BCE: governor of Transalpine (Further) Gaul; suppressed a revolt of the Bellovaci (46).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "relationships",
+    "text": "- Julius Caesar: very close and trusted; benefactor.\n- Mark Antony: fellow Caesarian officer; both travelled with Caesar from Narbo into Italy in 45 BCE.\n- Young Octavius (Caesar's great-nephew): also in Caesar's travelling party in 45 BCE.\n- Marcus Brutus: distant kinsman in the Junii; different political history (Marcus fought for Pompey, Decimus for Caesar).\n- Sempronia: mother.\n- Paula Valeria: wife.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "03_decimus_brutus.txt",
+    "stakeholder": "DECIMUS JUNIUS BRUTUS ALBINUS (DECIMUS BRUTUS)",
+    "section": "historical_actions",
+    "text": "- c. 85-81 BCE: born.\n- 56 BCE: defeats the Veneti at sea for Caesar.\n- 52 BCE: campaigns against Vercingetorix.\n- c. 50 BCE: marries Paula Valeria.\n- 49 BCE: wins the naval battles at Massilia; the city falls.\n- 48-46 BCE: governs Transalpine Gaul; defeats the Bellovaci.\n- 45 BCE: honoured by Caesar on his return from Spain; in line for high office.\n\nSources: Caesar, Gallic War 3.11-16 and 7.9; Caesar, Civil War 1.36, 1.56-58, 2.3-7; Plutarch, Life of Antony 11; Cicero, Letters to Friends 8.7; Smith, Dictionary of Greek and Roman Biography (\"Brutus 18\").\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "political_position",
+    "text": "- Senior consular (former consul, 63 BCE) and Rome's greatest orator. Enormous prestige, little real power by 45 BCE.\n- Committed constitutionalist: believes in the traditional Republic, government by the Senate and the \"harmony of the orders\" (Senate and equestrians together).\n- Leaned optimate: joined Pompey's side in 49 BCE after long hesitation, then returned to Italy after Pharsalus and was pardoned by Caesar (47 BCE).\n- In 46-45 BCE he largely withdrew from public life, writing philosophy, while speaking for pardons of former Pompeians before Caesar. He privately resented Caesar's dominance.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "family_ancestry",
+    "text": "- Born 3 January 106 BCE at Arpinum, a hill town southeast of Rome.\n- Equestrian family, not noble: a \"new man\" (novus homo), the first of his family to reach the consulship.\n- Brother: Quintus Tullius Cicero, who served as Caesar's legate in Gaul and later fought for Pompey. Relations strained by the civil war.\n- Wife: Terentia (married c. 79 BCE), wealthy and strong-willed; divorced c. 46 BCE.\n- Second wife: Publilia, his young and wealthy ward, married late 46 BCE; separated in 45 BCE.\n- Daughter: Tullia, his favourite. Her third husband was Dolabella (married 50 BCE, divorced 46). She died in February 45 BCE after childbirth, leaving Cicero devastated.\n- Son: Marcus, studying in Athens from 45 BCE.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "personal_ambitions",
+    "text": "- Above all, to be a leading statesman (\"princeps\") guiding the Republic by counsel and eloquence.\n- Lasting fame: his consulship of 63 BCE, when he suppressed the Catilinarian conspiracy, is his proudest achievement, and he never stops referring to it.\n- Literary immortality: in 46-45 BCE he wrote a torrent of works, including Brutus, Orator, Paradoxa Stoicorum, Cato (praising Cato), Hortensius, Academica, On Ends, Tusculan Disputations and On the Nature of the Gods.\n- Personal consolation after Tullia's death: he planned a shrine to her and wrote a Consolation for himself.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "political_alliances",
+    "text": "- Titus Pomponius Atticus: his closest friend and confidant; the main recipient of his letters.\n- Pompey (died 48 BCE): his long-time, if disappointing, political champion.\n- Cato (died 46 BCE): an ally in principle, though Cicero found him rigid.\n- Marcus Brutus: friend and intellectual partner; Cicero dedicated works to him and named the dialogue Brutus after him.\n- Caesar: correct, sometimes cordial personal relations, especially after the pardon, but no political alliance. Caesar admired his literary skill.\n- Caesarians who liked him personally: Hirtius, Pansa, Balbus, Oppius and Dolabella (until the divorce).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "rivalries",
+    "text": "- Mark Antony: mutual hostility, rooted in Cicero's execution of Antony's stepfather Lentulus in 63 BCE.\n- Clodius (died 52 BCE): his worst enemy, who drove him into exile in 58 BCE.\n- Caesar, politically: Cicero resented that the Republic now depended on one man's mercy. He wrote praise of Cato; Caesar answered with an Anticato (45 BCE).\n- Crassus: uneasy relations, now in the past.\n- Cicero mocked Caesar's honours privately (for example, his statue in the temple of Quirinus) and joked bitterly when Caesar made a man consul for only a few hours on 31 December 45 BCE.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "military_influence",
+    "text": "- Very low. Cicero was a civilian politician.\n- His only command: governor of Cilicia (51-50 BCE), where he led a small campaign in the Amanus mountains, was hailed \"imperator\" by his troops and hoped, unsuccessfully, for a triumph.\n- His influence is moral authority, oratory and his network of letters, not soldiers.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "relationships",
+    "text": "- Julius Caesar: pardoner and occasional guest. In December 45 BCE Caesar visited Cicero's villa near Puteoli with a large escort; Cicero wrote that the visit was pleasant, the talk literary, and Caesar \"not a guest to whom you'd say: do come again.\"\n- Marcus Brutus: friend and fellow philosopher.\n- Cassius: friendly correspondent, discussing Epicureanism in 45 BCE.\n- Mark Antony: enemy.\n- Dolabella: former son-in-law; personally charming but unreliable.\n- Atticus: closest friend.\n- Quintus: brother, with a strained relationship.\n- Former Pompeians: he spoke for Marcus Marcellus (46 BCE), Quintus Ligarius (46) and King Deiotarus (November 45) before Caesar.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "04_cicero.txt",
+    "stakeholder": "MARCUS TULLIUS CICERO",
+    "section": "historical_actions",
+    "text": "- 106 BCE: born at Arpinum.\n- 70 BCE: prosecutes Verres; establishes himself as Rome's leading advocate.\n- 63 BCE: consul; suppresses Catiline's conspiracy; executes five conspirators without trial, including Antony's stepfather Lentulus.\n- 60-59 BCE: declines to join Caesar, Pompey and Crassus.\n- 58-57 BCE: exiled through Clodius's law; recalled after about 18 months.\n- 56 BCE: pressured to support the \"triumvirs\".\n- 51-50 BCE: governor of Cilicia.\n- 49-48 BCE: joins Pompey in Greece after hesitation; absent from Pharsalus.\n- 48-47 BCE: waits at Brundisium; pardoned by Caesar (September 47).\n- 46 BCE: speeches for Marcellus and Ligarius; divorces Terentia; marries Publilia; writes Brutus, Orator and Cato.\n- February 45 BCE: Tullia dies.\n- 45 BCE: writes Academica, On Ends and the Tusculans; defends Deiotarus; hosts Caesar at Puteoli (December).\n\nSources: Cicero's letters to Atticus (books 12-13) and to friends; Pro Marcello; Pro Ligario; Pro Rege Deiotaro; Plutarch, Life of Cicero.\n",
+    "warning": null
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "political_position",
+    "text": "- Senator of modest rank.\n- Elected tribune of the plebs for the year 44 BCE. Tribunes took office on 10 December, so he entered office on 10 December 45 BCE, within this cutoff.\n- No recorded loyalty to either Caesar or the optimates before this. As tribune he held the right to veto and was legally sacrosanct (physically inviolable).\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "family_ancestry",
+    "text": "- Gens Servilia, plebeian branch (the Servilii Cascae). He was NOT from the patrician Servilii Caepiones, the family of Servilia (Marcus Brutus's mother); no close relationship is attested.\n- Brother: Gaius Servilius Casca, also active in politics.\n- An earlier Casca was tribune in 212 BCE; the family was respectable but not prominent.\n- Wife, children and other details: unknown.\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "personal_ambitions",
+    "text": "- Unknown beyond the normal goal of a senatorial career. Holding the tribunate suggests he wanted to rise in public life.\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "political_alliances",
+    "text": "- His brother Gaius.\n- Otherwise none documented before 44 BCE.\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "rivalries",
+    "text": "- None documented before 44 BCE.\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "military_influence",
+    "text": "- None documented. No commands recorded.\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "relationships",
+    "text": "- Gaius Servilius Casca: brother.\n- Fellow tribunes for 44 BCE (took office 10 December 45 BCE).\n- No documented personal relationship with Caesar, Brutus, Cassius, Antony or Cicero before the cutoff.\n\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "05_casca.txt",
+    "stakeholder": "PUBLIUS SERVILIUS CASCA LONGUS (CASCA)",
+    "section": "historical_actions",
+    "text": "- Mid-to-late 45 BCE: elected tribune of the plebs for 44.\n- 10 December 45 BCE: enters office as tribune.\n\nSuggested handling in your graph: give each Casca attribute a confidence of \"unknown\" rather than leaving it empty, so the model knows the gap is real and not missing data.\n\nSources: Broughton, Magistrates of the Roman Republic, vol. 2 (tribunes of 44 BCE), via spqrome.org; Smith, Dictionary of Greek and Roman Biography (\"Casca\").\n",
+    "warning": "Very little is recorded about Casca up to this cutoff. Shakespeare's blunt, sarcastic Casca is largely the playwright's invention, so do not use the play as a source for this node. Treat this node as sparse and low-confidence, and do NOT fill the gaps with LLM guesses."
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "political_position",
+    "text": "- Traditionally the governing council of the Republic: it directed foreign policy, finance, provinces and religion, and its decrees (senatus consulta) carried great weight.\n- By 45 BCE its real power had collapsed. Caesar was dictator (for ten years from 46 BCE, renewed annually) and sole consul for most of 45. The Senate now mostly ratified what Caesar wanted.\n- Split internally between Caesar's appointees and loyalists, pardoned former Pompeians, and old nobles who resented his dominance but stayed silent.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "family_ancestry",
+    "text": "- Roughly 600 members under Sulla's reforms. Caesar expanded it to about 900 (by 45 BCE).\n- New members included Caesar's officers, centurions, sons of freedmen, Italian townsmen and provincials, including men from Gaul. Old families mocked them; jokes circulated about Gauls who had swapped trousers for the senator's broad-striped toga.\n- Old patrician and plebeian noble families (Claudii, Cornelii, Junii, Cassii, Aemilii and others) were now diluted by newcomers.\n- Many leading optimates had died in the civil war (Pompey, Cato, Metellus Scipio, Domitius Ahenobarbus, Afranius, Labienus), leaving the Senate without its traditional leadership.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "personal_ambitions",
+    "text": "- Prestige (dignitas) and the traditional right to share power.\n- Access to offices, provinces and honours, which now depended on Caesar's favour.\n- Survival and property security after confiscations.\n- For the old nobility: restoration of free elections and senatorial authority.\n- For new senators: keeping the positions Caesar gave them.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "political_alliances",
+    "text": "- Caesarian bloc: his officers and appointees (Antony, Lepidus, Dolabella, Balbus, Oppius, Hirtius, Pansa, Decimus Brutus, Trebonius and others).\n- Pardoned Pompeians: Marcus Brutus, Cassius, Cicero, Marcellus and others, who owed their status to Caesar's clemency.\n- The equestrian order: traditional partners of senators in business and juries.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "rivalries",
+    "text": "- Old nobility vs. Caesar's new men.\n- Pompeian survivors vs. Caesarian loyalists.\n- Senate vs. the tribunes and the urban crowd (an old tension).\n- Senate vs. Caesar's dominance: resentment grew, though open opposition was rare.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "military_influence",
+    "text": "- As a body, almost none. The legions were loyal to Caesar, and Caesar appointed the governors and commanders.\n- Individual senators commanded armies only by Caesar's grant.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "relationships",
+    "text": "- Julius Caesar: dominant figure. After Munda (news reached Rome on 20 April 45 BCE) the Senate voted him extravagant honours, including:\n  * 50 days of public thanksgiving;\n  * the title \"Liberator\" and a temple of Liberty;\n  * the permanent use of \"Imperator\" as part of his name;\n  * the right to wear triumphal dress at all festivals and a laurel wreath at all times;\n  * a statue in the temple of Quirinus (deified Romulus) inscribed \"to the unconquered god\";\n  * a statue among the kings of Rome on the Capitol;\n  * an ivory statue carried among the gods' images in the procession at the circus games.\n  Ancient writers suggest some senators voted these to flatter Caesar and others to make him hated.\n- Caesar's treatment of the Senate: he filled offices himself, increased the numbers of praetors and quaestors, and arranged consulships. On 31 December 45 BCE, when a consul died on the last day of the year, Caesar had Gaius Caninius Rebilus elected consul for the few remaining hours. Cicero joked that no one had breakfasted during Rebilus's consulship.\n- The tribunes: at Caesar's Spanish triumph (October 45 BCE) the tribune Pontius Aquila refused to stand as Caesar's chariot passed; Caesar reacted with angry sarcasm.\n- Cicero: its most eloquent voice, now largely silent in public.\n- The Roman people: some resentment that the Senate had become a rubber stamp; mixed feelings about Caesar's new senators.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "06_the_senate.txt",
+    "stakeholder": "THE ROMAN SENATE",
+    "section": "historical_actions",
+    "text": "- 48 BCE: after Pharsalus, votes Caesar powers including a long dictatorship and the right to decide war and peace.\n- 46 BCE: after Thapsus, votes 40 days of thanksgiving and a dictatorship for ten years; makes Caesar \"prefect of morals\"; witnesses the quadruple triumph.\n- 46 BCE: Caesar pardons Marcellus in the Senate after senators plead for him (Cicero's Pro Marcello).\n- April 45 BCE: votes the post-Munda honours listed above.\n- 45 BCE: Caesar enlarges the Senate to about 900 members.\n- October 45 BCE: Caesar's Spanish triumph, celebrating a victory over fellow Romans, which offended many.\n- October 45 BCE: Caesar resigns his sole consulship; Quintus Fabius Maximus and Gaius Trebonius become suffect consuls.\n- 31 December 45 BCE: Fabius dies; Caninius Rebilus is made consul for a few hours.\n\nSources: Cassius Dio, Roman History 43.14-50; Suetonius, Julius 41, 76-78, 80; Cicero, Letters to Atticus 12-13 and Letters to Friends 7.30; Appian, Civil Wars 2.106.\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "political_position",
+    "text": "- Citizens living in Rome, perhaps 750,000-1,000,000 people in total, most of them poor.\n- Formal power: they voted in assemblies, elected magistrates and passed laws. Under Caesar's dominance elections still took place, but Caesar influenced or chose many candidates.\n- Generally favourable to Caesar, who had long presented himself as their champion (popularis), but not unconditionally. Their mood could turn quickly.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "family_ancestry",
+    "text": "- Freeborn poor citizens, freedmen (former slaves) and their descendants, shopkeepers, artisans and labourers.\n- Many immigrants from Italy and the provinces.\n- Organised partly through neighbourhood associations (collegia), which Clodius had used in the 50s BCE for street politics. Caesar dissolved most collegia except ancient ones (46 BCE).\n- Housing: crowded apartment blocks (insulae), with fire and collapse common; rent was a constant burden.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "personal_ambitions",
+    "text": "- Cheap or free grain.\n- Relief from rent and debt.\n- Entertainment and public generosity: games, gladiators, feasts and donations.\n- Protection by the tribunes, whom they saw as their defenders.\n- Land in colonies for those willing to leave Rome.\n- Respect for traditional Roman pride. Many disliked anything resembling monarchy, a deep Roman taboo since the expulsion of the kings.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "political_alliances",
+    "text": "- Julius Caesar: their leading patron, through laws, gifts and spectacles.\n- The tribunes of the plebs: their traditional champions.\n- Popular leaders past and present: memories of the Gracchi, Marius and Clodius; Antony and Fulvia were tied to Clodius's former network.\n- Dolabella: led debt-relief agitation in 47 BCE and was popular with debtors.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "rivalries",
+    "text": "- The optimates and the Senate's old elite, seen as defenders of the rich.\n- Creditors and landlords.\n- Tension with Caesar when he cut the grain-dole list, banned the collegia or celebrated a triumph over fellow Romans.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "military_influence",
+    "text": "- No organised military force, but the crowd could riot, intimidate assemblies and occupy the Forum, as in the Clodian street violence of the 50s and Dolabella's riots of 47 BCE, which Antony suppressed with soldiers.\n- Many citizens had relatives in the legions.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "relationships",
+    "text": "- Caesar's measures affecting them (48-45 BCE):\n  * Debt relief (49-48 BCE): property valued at pre-war prices for repayment and interest already paid deducted. It helped but did not cancel debts.\n  * Rent relief (47 BCE): one year's rent remitted for cheaper housing in Rome.\n  * Grain dole reform (46 BCE): a census cut the recipients from about 320,000 to 150,000.\n  * Colonisation: about 80,000 citizens sent to colonies overseas.\n  * Gifts at the quadruple triumph (46 BCE): grain, oil and money (Suetonius: 300 sesterces per citizen, later 100 more), a public banquet on 22,000 tables, gladiator fights, a staged naval battle, wild-beast hunts and theatrical shows.\n  * Building: the Forum of Caesar and the temple of Venus Genetrix, dedicated in 46 BCE.\n  * The new calendar (46 BCE): the \"year of confusion\" of 445 days, then the Julian calendar from 1 January 45 BCE.\n- Mixed feelings: crowds cheered his victories over foreigners, but many resented the Spanish triumph (October 45 BCE) because it celebrated a victory over Roman citizens, the sons of Pompey.\n- Pompey: still remembered with affection. Pompey's statues, which the crowd had thrown down, were restored on Caesar's orders.\n- The Senate: often viewed with suspicion as the home of the rich.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "07_the_roman_people.txt",
+    "stakeholder": "THE ROMAN PEOPLE (PLEBS URBANA)",
+    "section": "historical_actions",
+    "text": "- 49 BCE: welcome Caesar's return to Rome; many fear proscriptions like Sulla's, which do not happen.\n- 48-47 BCE: debt crisis; riots under Caelius (48) and Dolabella (47); Antony suppresses the 47 riots with troops, killing many.\n- 46 BCE: enjoy the quadruple triumph games; many lose their place on the grain list after the census.\n- 45 BCE: the new calendar begins on 1 January; the Spanish triumph in October draws grumbling.\n\nSources: Suetonius, Julius 38-42, 75, 78; Cassius Dio, Roman History 42-43; Plutarch, Life of Caesar 55-57; Appian, Civil Wars 2.101-106.\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "political_position",
+    "text": "- The real foundation of Caesar's power. Loyal to Caesar personally rather than to the Senate or the state.\n- Not a formal political body, but their wishes (pay, land and honour) carried enormous weight.\n- Two groups by 45 BCE:\n  * Serving legions in the provinces and Italy, including forces being gathered for Caesar's planned war against Parthia.\n  * Veterans discharged after the civil wars, being settled on land in Italy and the provinces.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "family_ancestry",
+    "text": "- Mostly Roman citizens from rural Italy; many legions recruited in Cisalpine Gaul (northern Italy).\n- The Gallic veterans had served with Caesar since 58 BCE, some for ten years or more.\n- Famous legions: the Tenth (Caesar's favourite), plus the Seventh, Eighth, Ninth and others. The Fifth \"Alaudae\" (\"Larks\") was raised from Transalpine Gauls, who were given citizenship.\n- Centurions were the backbone: highly respected, some promoted to equestrian rank or into Caesar's new Senate.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "personal_ambitions",
+    "text": "- Pay and bonuses. Caesar doubled legionary pay (to 225 denarii a year).\n- Discharge with land: a farm, the traditional veteran's reward.\n- Plunder and donatives (cash gifts) after victories.\n- Recognition: glory, decorations and promotion.\n- Security of their land grants, which depended on Caesar's arrangements staying in force.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "political_alliances",
+    "text": "- Julius Caesar: their general and patron; intense personal loyalty and pride in shared campaigns.\n- Caesar's senior officers, especially Mark Antony (very popular with soldiers) and Lepidus (master of the horse in 46-44, commanding troops near Rome).\n- Caesarian colonies: veterans settled together kept their comradeship and could be quickly remobilised.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "rivalries",
+    "text": "- The Pompeian armies they defeated (Pharsalus 48, Thapsus 46, Munda 45).\n- Tension with Caesar himself over delayed rewards: in 47 BCE several veteran legions, including the Tenth, mutinied in Campania demanding discharge and payment, and killed officers sent to calm them. Caesar ended the mutiny by addressing them as \"citizens\" (Quirites) instead of \"fellow soldiers\", shaming them back into service.\n- Civilians whose land was taken for veteran colonies.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "military_influence",
+    "text": "- Decisive. These were the most battle-hardened troops in the Mediterranean.\n- Gallic War (58-50 BCE), including Alesia (52); civil war campaigns at Ilerda (49), Dyrrhachium and Pharsalus (48), Alexandria (48-47), Zela (47, \"veni, vidi, vici\"), Thapsus (46) and Munda (45). Munda was the hardest fight of all; Caesar said he had often fought for victory, but there he fought for his life.\n- By late 45 BCE many legions were being concentrated for a planned eastern campaign against Parthia (and Dacia), so a large army remained under arms.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "relationships",
+    "text": "- Julius Caesar: loyal and proud; Caesar was generous but also strict, punishing mutiny and cowardice.\n- Mark Antony: popular with them; commanded many in Italy and at Pharsalus.\n- Lepidus: commanded troops near Rome as master of the horse.\n- The Roman people: veterans in Rome for triumphs mixed with the crowd; their presence was intimidating.\n- The Senate: viewed with indifference or contempt as a body that had tried to strip their general of his command in 49 BCE.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "08_caesars_veterans_and_army.txt",
+    "stakeholder": "CAESAR'S VETERANS AND ARMY",
+    "section": "historical_actions",
+    "text": "- January 49 BCE: cross the Rubicon with Caesar.\n- 49-48 BCE: Spain, Dyrrhachium, Pharsalus.\n- 47 BCE: mutiny in Campania; reconciled by Caesar's \"Quirites\" speech; sent to Africa.\n- 46 BCE: Thapsus. At the quadruple triumph each legionary receives 24,000 sesterces (Suetonius), on top of 2,000 promised at the start of the war, with more for centurions and officers. Soldiers sing rude songs about Caesar during the triumph, as tradition allowed.\n- 45 BCE: Munda. Many veterans are discharged and settled in colonies in Italy and the provinces; others are kept under arms for the planned Parthian war.\n\nSources: Caesar, Gallic War and Civil War; Suetonius, Julius 38, 49, 51, 65-70; Appian, Civil Wars 2.92-94 (the mutiny of 47 BCE); Cassius Dio, Roman History 42.52-55 and 43.\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "political_position",
+    "text": "- Senators, equestrians and officers who fought for Pompey and the Senate against Caesar (49-45 BCE) and were then pardoned under Caesar's policy of clemency (clementia).\n- Now inside Caesar's system: allowed home, often given back their property, and some given offices or provinces.\n- Their political position was ambiguous. They owed their lives and careers to Caesar's mercy, but they had fought for the Senate's traditional authority, which Caesar's dominance had ended.\n- Those never reconciled: Sextus Pompey, still at large in Spain after Munda; and the dead (Pompey, Cato, Scipio, Labienus, Afranius, Petreius, Gnaeus Pompey the younger).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "family_ancestry",
+    "text": "- Many came from Rome's oldest noble families, the core of the optimate aristocracy.\n- Key members by the end of 45 BCE:\n  * Marcus Junius Brutus: fought at Pharsalus; pardoned immediately afterwards (48 BCE); governor of Cisalpine Gaul for Caesar (46-45); married Porcia, Cato's daughter (45).\n  * Gaius Cassius Longinus: Pompeian fleet commander; pardoned (48/47); later Caesar's legate.\n  * Cicero: pardoned (47); writing and pleading for others.\n  * Marcus Claudius Marcellus (consul 51 BCE): a fierce opponent of Caesar; pardoned in the Senate (46) after pleas; killed at Piraeus (May 45) by an associate in a private quarrel, before returning to Rome.\n  * Quintus Ligarius: fought against Caesar in Africa; pardoned (46) after Cicero's speech.\n  * Marcus Terentius Varro: scholar and Pompeian commander in Spain; pardoned and appointed to organise Rome's first public library.\n  * Servius Sulpicius Rufus: a cautious moderate; governed Achaea for Caesar (46-45).\n  * King Deiotarus of Galatia: a Pompeian ally, defended by Cicero before Caesar (November 45).\n- Family ties: many were linked by marriage to Cato's family (Porcia married Brutus in 45) or to Servilia's network (Brutus, Cassius's wife Junia Tertia).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "personal_ambitions",
+    "text": "- Safety: their lives and property depended on Caesar's continued goodwill.\n- Restoration of status (dignitas): getting back into office and the Senate.\n- Honour: proud men felt humiliated by owing their rank to one man's mercy. Clemency was a virtue of kings, a sign that they were no longer equals.\n- For the most principled: keeping faith with Cato's memory and the free Republic. Cato's suicide at Utica (April 46 BCE), rather than accept Caesar's pardon, made him a martyr. Cicero and Brutus wrote works praising him; Caesar answered with a pamphlet attacking him, the Anticato (45 BCE).\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "political_alliances",
+    "text": "- With each other: an informal network of former comrades, families and intellectuals.\n- With Cicero as their main advocate before Caesar.\n- With Caesar: dependent alliances. Caesar allowed those not yet pardoned to return to Italy and even to hold magistracies and commands (Suetonius 75).\n- With Pompey's memory: Caesar restored Pompey's statues, which the crowd had thrown down.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "rivalries",
+    "text": "- Caesar's loyalists, who had won the war and resented former enemies getting offices and favour.\n- Caesar's dominance itself, a rivalry of principle that was rarely voiced openly.\n- Among themselves: the moderates who accepted pardon vs. the irreconcilables who fought on to Munda.\n- With Antony in particular, who bought confiscated Pompeian property, including Pompey's own house.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "military_influence",
+    "text": "- As a group, little by late 45 BCE: their armies were destroyed at Pharsalus (48), Thapsus (46) and Munda (45).\n- Some individuals were experienced commanders (Cassius, Brutus as a governor).\n- Sextus Pompey still led a small guerrilla force in Spain, the last active Pompeian resistance.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "relationships",
+    "text": "- Julius Caesar: pardoner and benefactor, and the man who destroyed their cause. Caesar boasted of his clemency, from Corfinium (49 BCE), where he released Domitius Ahenobarbus, to Pharsalus and after. Not all were spared: some prominent opponents captured in Africa (46 BCE), including Faustus Sulla and Afranius, were killed, whether or not on Caesar's orders.\n- Cicero: their spokesman.\n- Marcus Brutus: emerging as the most respected figure among them, through his virtue, his lineage and his link to Cato.\n- The Senate: they made up a significant, though diluted, part of it.\n- The Roman people: Pompey was still remembered with some affection.\n- Caesar's veterans: former battlefield enemies.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "09_former_pompey_supporters.txt",
+    "stakeholder": "FORMER POMPEY SUPPORTERS (PARDONED POMPEIANS)",
+    "section": "historical_actions",
+    "text": "- 49 BCE: leave Rome with Pompey; Caesar pardons the Pompeians captured at Corfinium.\n- 48 BCE: defeated at Pharsalus; Pompey killed in Egypt; many surrender and are pardoned (Brutus, then Cassius).\n- 47 BCE: Cicero pardoned.\n- 46 BCE: defeated at Thapsus; Cato's suicide; Scipio dies; pardons of Marcellus and Ligarius.\n- 45 BCE: defeated at Munda; Labienus and Gnaeus Pompey die; Sextus escapes. Survivors are allowed home and into office. Brutus marries Porcia. Cicero defends Deiotarus.\n\nSources: Caesar, Civil War; Cicero, Pro Marcello, Pro Ligario, Pro Rege Deiotaro and Letters to Friends 4.12 (the death of Marcellus); Suetonius, Julius 75; Plutarch, Life of Brutus 6-7 and Life of Cato the Younger.\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "political_position",
+    "text": "- Senator with a strong optimate background and philosophical convictions about liberty and virtue.\n- Fought for Pompey in the civil war (49-48 BCE), even though Pompey had caused his father's death, because he judged Pompey's cause the better one for the state.\n- Pardoned by Caesar immediately after Pharsalus (48 BCE) and treated as an honoured companion. Caesar made him governor of Cisalpine Gaul (46-45 BCE), where his honest rule contrasted with the plundering of other governors.\n- By late 45 BCE he was one of the most respected men in Rome: favoured by Caesar, admired by Cicero and the former Pompeians, and the nephew and son-in-law of Cato. Both camps regarded him as theirs.\n- In August 45 BCE, after meeting Caesar returning from Spain, he told Cicero that Caesar was \"going over to the good men\" (the optimates). Cicero doubted it.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "family_ancestry",
+    "text": "- Born c. 85 BCE.\n- Father's line: the Junii Bruti, claiming descent from Lucius Junius Brutus, who expelled the last king of Rome, Tarquin, and founded the Republic. Hostile writers disputed this descent.\n- Mother's line: Servilia's family, the Servilii, claimed descent from Gaius Servilius Ahala, who killed Spurius Maelius when Maelius was accused of seeking absolute power. Both sides of his ancestry were famous enemies of kings.\n- Father: Marcus Junius Brutus (tribune 83 BCE), killed in 77 BCE on Pompey's orders after surrendering during the revolt of Lepidus. Brutus long refused to speak to Pompey because of this.\n- Mother: Servilia, half-sister of Cato the Younger, a powerful political figure and for years Caesar's lover. Caesar gave her a pearl said to be worth six million sesterces. Rumour said Caesar thought Brutus might be his son; Caesar's age (about 15 in 85 BCE) makes this very unlikely.\n- Uncle and later father-in-law: Cato the Younger, whom Brutus admired above all Romans. Cato killed himself at Utica in 46 BCE rather than accept Caesar's pardon.\n- Adoption: adopted by his maternal uncle Quintus Servilius Caepio, hence the name Caepio Brutus.\n- Half-sisters: three Juniae; Junia Tertia married Cassius, and another Junia married Lepidus.\n- First wife: Claudia, daughter of Appius Claudius Pulcher; divorced in 45 BCE.\n- Second wife: Porcia, Cato's daughter and widow of Bibulus (Caesar's old enemy); married in mid-45 BCE. Servilia reportedly disliked the match, and Cicero noted the gossip.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "personal_ambitions",
+    "text": "- Moral reputation: to be, and to be seen as, a man of virtue in the mould of Cato and Plato's philosophers.\n- Philosophy and writing: follower of the Old Academy of Antiochus of Ascalon; wrote on virtue (De Virtute), wrote a eulogy of Cato (46-45 BCE), made an abridgement of Polybius, and wrote in a terse, Spartan Greek style.\n- A traditional career up to the consulship, achieved honourably.\n- Wealth: despite his ideals, he lent money at high interest. Cicero, as governor of Cilicia (51-50 BCE), discovered that Brutus's agents were lending to the city of Salamis in Cyprus at 48% a year (four times the legal limit) and pressing for collection with force. Cicero refused to enforce it. This is a clear gap between his stated values and his conduct.\n- Caesar's verdict, after hearing him speak (47 BCE): \"I do not know what this young man wants, but whatever he wants, he wants very much.\"\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "political_alliances",
+    "text": "- Cato: uncle, model and father-in-law.\n- Cicero: close friend and literary partner; Cicero named his history of oratory Brutus (46 BCE) after him and dedicated Orator, On Ends and the Tusculan Disputations to him.\n- Pompey (died 48 BCE): his side in the civil war despite the family grievance.\n- Caesar (from 48 BCE): pardoner, patron and his mother's lover; gave him Cisalpine Gaul.\n- Cassius: brother-in-law; Brutus pleaded with Caesar for Cassius's pardon.\n- Appius Claudius Pulcher: his first father-in-law; Brutus served as his quaestor in Cilicia (53 BCE).\n- The former Pompeian network, which saw him as its most respected figure.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "rivalries",
+    "text": "- Pompey (before 49 BCE): personal enmity over his father's death. In 52 BCE Brutus wrote a pamphlet attacking the idea of a dictatorship for Pompey.\n- Caesar's grasping followers: he despised flatterers and men who could not refuse a favour.\n- Occasional friction with Cassius, despite their family tie.\n- No open hostility toward Caesar is recorded before the cutoff.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "military_influence",
+    "text": "- Limited. He was not a career soldier.\n- Served as a legate with Sestius in Cilicia (49 BCE), then joined Pompey in Macedonia and fought at Pharsalus (48 BCE). Caesar ordered his officers to spare him.\n- As governor of Cisalpine Gaul (46-45 BCE) he controlled the province's forces, but his reputation there was administrative, not military.\n- His real influence was moral authority and the name of Brutus.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "relationships",
+    "text": "- Julius Caesar: pardoner and benefactor, his mother's long-time lover and the rumoured (but unlikely) father. Trusted adviser after Pharsalus: Brutus correctly guessed that Pompey had fled to Egypt. They met again in 45 BCE on Caesar's return from Spain, on good terms.\n- Servilia: mother; strong influence; Caesar's lover.\n- Cato: uncle and moral model; died 46 BCE.\n- Porcia: wife from 45 BCE; Cato's daughter, known for her devotion and strong will.\n- Cassius: brother-in-law (married to his half-sister Junia Tertia).\n- Cicero: close friend and admirer.\n- Lepidus: brother-in-law (married to another half-sister).\n- Pompey: his father's killer, later his commander.\n- Decimus Brutus: distant kinsman in the Junii.\n- His household philosophers and rhetoricians: Aristus (brother of Antiochus) and Empylus.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "10_marcus_brutus.txt",
+    "stakeholder": "MARCUS JUNIUS BRUTUS",
+    "section": "historical_actions",
+    "text": "- c. 85 BCE: born.\n- 77 BCE: father killed on Pompey's orders.\n- 58-56 BCE: accompanies Cato to Cyprus; converts King Ptolemy of Cyprus's treasure into money for Rome; wins Cato's praise.\n- c. 55-54 BCE: as moneyer, issues coins showing Libertas and his ancestors Lucius Brutus and Servilius Ahala.\n- 54 BCE: marries Claudia.\n- 53 BCE: quaestor in Cilicia under Appius Claudius.\n- 52 BCE: writes against a dictatorship for Pompey.\n- 51-50 BCE: his high-interest loan to Salamis is exposed by Cicero.\n- 49 BCE: joins Pompey; legate in Cilicia; then Macedonia.\n- 48 BCE: fights at Pharsalus; escapes to Larissa; writes to Caesar; pardoned; advises Caesar that Pompey has fled to Egypt.\n- 47 BCE: pleads for Cassius's pardon; speaks for a client king (Plutarch's text says \"the king of Africa\"; usually identified as Deiotarus of Galatia) at Nicaea.\n- 46-45 BCE: governs Cisalpine Gaul for Caesar; honours from the province.\n- 46-45 BCE: writes a eulogy of Cato; Cicero dedicates several works to him.\n- 45 BCE: divorces Claudia; marries Porcia; meets Caesar returning from Spain and reports favourably on him to Cicero.\n\nSources: Plutarch, Life of Brutus 1-6 (your file, pre-cutoff chapters only); Cicero, Letters to Atticus 5.21, 6.1-3 (the Salamis loan), 13.9-10, 13.40 (Brutus on Caesar, August 45) and the dialogue Brutus; Suetonius, Julius 50 (Servilia); Plutarch, Life of Cato the Younger.\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "political_position",
+    "text": "- Master of the Roman world after victories at Pharsalus (48), Thapsus (46) and Munda (45 BCE).\n- Dictator: voted a dictatorship for ten years in 46 BCE (renewed annually), plus sole consul for most of 45 BCE (resigned in October in favour of suffect consuls). Designated consul for 44 BCE with Antony as colleague.\n- Pontifex maximus (chief priest) since 63 BCE; \"prefect of morals\" since 46.\n- Popularis by career: built his rise on the people, the tribunes and his army, against the optimate leadership of the Senate.\n- Overwhelming honours from the Senate after Munda (April 45 BCE): 50 days of thanksgiving, the title Liberator, the permanent use of \"Imperator\" in his name, triumphal dress at festivals, a laurel wreath at all times, a statue in the temple of Quirinus inscribed \"to the unconquered god\", a statue among the kings on the Capitol, and an ivory statue in the procession of the gods. Many Romans found some of these honours troubling.\n- Policy of clemency (clementia) towards defeated Romans: he pardoned most enemies and allowed exiles home, setting himself apart from the bloody dictatorship of Sulla.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "family_ancestry",
+    "text": "- Born 12 or 13 July 100 BCE.\n- Gens Julia: an ancient patrician clan claiming descent from Iulus, son of Aeneas, and so from the goddess Venus. The family was old but not recently powerful.\n- Father: Gaius Julius Caesar (praetor c. 92 BCE), died 85 BCE.\n- Mother: Aurelia, of the Aurelii Cottae; highly respected; died 54 BCE.\n- Aunt: Julia, wife of Gaius Marius, the great popular general. This tied Caesar to the Marian (popular) faction.\n- Wives:\n  * Cornelia, daughter of Cinna (Marius's ally); Caesar refused Sulla's order to divorce her and fled. She died c. 69 BCE.\n  * Pompeia, Sulla's granddaughter; divorced in 62 BCE after the Bona Dea scandal involving Clodius (\"Caesar's wife must be above suspicion\").\n  * Calpurnia, daughter of Lucius Calpurnius Piso (consul 58); married 59 BCE.\n- Daughter: Julia, married to Pompey (59 BCE) to seal their alliance; died in childbirth in 54 BCE, weakening the bond with Pompey.\n- Son (claimed): Caesarion, born to Cleopatra VII of Egypt (47 BCE); Caesar did not formally acknowledge him in Rome. Cleopatra was staying in Rome in Caesar's gardens across the Tiber (46-45 BCE), which caused scandal.\n- Great-nephew: Gaius Octavius, grandson of his sister Julia, whom Caesar favoured; he joined Caesar in Spain (45 BCE).\n- Relatives through his mother's line: Mark Antony (distant kinsman through Antony's mother Julia); Lucius Julius Caesar.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "personal_ambitions",
+    "text": "- Dignitas (personal standing and honour) above all: he said he went to war in 49 BCE to defend his dignity and the rights of the tribunes.\n- Pre-eminence: Plutarch tells that, passing an Alpine village, he said he would rather be first there than second in Rome.\n- Glory to rival Alexander the Great: Suetonius says he wept as quaestor in Spain (69 BCE) because at his age Alexander had already conquered the world.\n- Grand plans by late 45 BCE: a war against Parthia (to avenge Crassus) and Dacia; codifying Roman law; public libraries (Varro appointed); draining the Pontine marshes; a new harbour at Ostia; a canal through the Isthmus of Corinth; rebuilding Rome on a grand scale; new colonies, including at Carthage and Corinth.\n- Reform: the Julian calendar (from 1 January 45 BCE); grain, debt and colonisation reforms; enlarging the Senate and the magistracies.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "political_alliances",
+    "text": "- First Triumvirate (60 BCE): an informal pact with Pompey and Crassus; renewed at Luca (56). It ended with Crassus's death (53) and Julia's death (54).\n- His army: the deepest alliance of all; personal loyalty of the legions.\n- The urban plebs and the tribunes.\n- His circle of agents and officers: Antony, Lepidus (master of the horse from 46), Decimus Brutus, Trebonius, Dolabella, Hirtius, Pansa, and his trusted aides Balbus and Oppius.\n- Pardoned Pompeians: Marcus Brutus, Cassius, Cicero and others, now part of his government.\n- Foreign allies: Cleopatra in Egypt; client kings in the East.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "rivalries",
+    "text": "- Pompey: ally, then son-in-law, then enemy; defeated at Pharsalus (48) and killed in Egypt. Caesar was said to have wept when shown Pompey's head.\n- Cato: his most principled opponent; killed himself at Utica (46). Caesar later wrote the Anticato (45 BCE) to answer Cicero's and Brutus's praise of Cato.\n- The optimates: Bibulus (his consular colleague in 59), Domitius Ahenobarbus, Metellus Scipio, Lentulus Crus and others.\n- Labienus: his best lieutenant in Gaul, who defected to Pompey in 49; killed at Munda (45).\n- The sons of Pompey: Gnaeus (killed after Munda, 45) and Sextus (still at large in Spain).\n- Senate traditionalists who resented his power, generally in silence. At his Spanish triumph (October 45) the tribune Pontius Aquila refused to stand for him, and Caesar mocked him angrily for days.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "military_influence",
+    "text": "- Supreme. The most successful general of his age, with the loyalty of the largest and most experienced army in the Mediterranean.\n- Gallic War (58-50 BCE): conquered Gaul, crossed the Rhine and invaded Britain (55 and 54); defeated Vercingetorix at Alesia (52).\n- Civil war: crossed the Rubicon (January 49); won in Spain at Ilerda (49); won at Pharsalus (48); won the Alexandrian war (48-47); won at Zela (\"veni, vidi, vici\", 47), Thapsus (46) and Munda (45, his hardest battle).\n- By late 45 BCE he was concentrating legions for the Parthian war.\n- Personal style: fast marches, personal courage, generosity to soldiers (pay doubled; large donatives), but iron discipline (ended the 47 BCE mutiny by calling his soldiers \"citizens\").\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "relationships",
+    "text": "- Marcus Brutus: pardoned and favoured him; Servilia's son; Caesar spared him at Pharsalus out of regard for her.\n- Servilia: long-time lover.\n- Cassius: pardoned former enemy; made him a legate.\n- Mark Antony: kinsman and lieutenant; strained in 46, reconciled in 45; colleague-designate in the consulship for 44.\n- Decimus Brutus: one of his most trusted officers since Gaul.\n- Cicero: pardoned him (47); polite relations; visited his villa near Puteoli in December 45; admired his writing; answered his Cato with the Anticato.\n- Lepidus: master of the horse; trusted deputy.\n- Calpurnia: wife.\n- Cleopatra: lover and ally; in Rome 46-45.\n- Octavius: favoured great-nephew.\n- Labienus: old lieutenant turned enemy.\n- The Senate: dominates it; enlarged it to about 900 members; on 31 December 45 BCE made Caninius Rebilus consul for a few hours after a consul's death.\n- The Roman people: patron through laws, games and gifts.\n- The army: their general and benefactor.\n\n",
+    "warning": null
+  },
+  {
+    "source_file": "11_julius_caesar.txt",
+    "stakeholder": "GAIUS JULIUS CAESAR",
+    "section": "historical_actions",
+    "text": "- 100 BCE: born.\n- c. 84-82 BCE: marries Cornelia; defies Sulla; flees and is spared.\n- 75 BCE: captured by pirates; after ransom, hunts them down and crucifies them.\n- 69 BCE: quaestor in Further Spain.\n- 65 BCE: aedile; lavish games; huge debts.\n- 63 BCE: elected pontifex maximus; argues in the Senate against executing the Catilinarians.\n- 62 BCE: praetor; divorces Pompeia.\n- 61-60 BCE: governor in Spain.\n- 60 BCE: First Triumvirate.\n- 59 BCE: consul; land laws over Bibulus's opposition; marries Calpurnia; Julia marries Pompey.\n- 58-50 BCE: conquers Gaul.\n- January 49 BCE: crosses the Rubicon; civil war; dictator for 11 days.\n- 48 BCE: dictator; wins at Pharsalus; Pompey killed in Egypt; Alexandrian war; Cleopatra.\n- 47 BCE: Zela; ends the veteran mutiny; pardons Cicero.\n- 46 BCE: wins at Thapsus; Cato dies; quadruple triumph; dictator for ten years; calendar reform; Forum of Caesar dedicated.\n- 1 January 45 BCE: Julian calendar takes effect.\n- 17 March 45 BCE: wins at Munda; Labienus and Gnaeus Pompey killed.\n- Mid-45 BCE: returns through Gaul and Italy with Antony, Decimus Brutus and Octavius; meets Marcus Brutus.\n- October 45 BCE: Spanish triumph over Romans, which resentful Romans criticised; resigns the sole consulship.\n- December 45 BCE: visits Cicero at Puteoli.\n- 31 December 45 BCE: arranges the hours-long consulship of Caninius Rebilus.\n\nSources: Suetonius, Julius 1-45, 50, 52, 54, 75-78; Plutarch, Life of Caesar 1-57; Cassius Dio, Roman History 43; Cicero, Letters to Atticus 13.52; Appian, Civil Wars 2.\n",
+    "warning": null
+  }
+]

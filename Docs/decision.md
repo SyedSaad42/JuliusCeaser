@@ -27,6 +27,7 @@ The Roman people (the plebs)
 Caesar’s veterans and army
 Former Pompey supporters pardoned by Caesar (for example Ligarius)
 
+we will break the variable of each stakeholder into nodes and will use llm to build the relation between them. this will act as motive network
 
 # LLM for nodes...
 
