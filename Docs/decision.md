@@ -41,3 +41,8 @@ okay i am thinking to ask
 if casca has to commit a murder of a senate member who would he choose as his best trusted person .
 if brutus was to go against ceaser what can stop him
 if antoni ever bitrays ceaser , will he conspire against him ?
+
+
+##  Output feedback
+-One thing has to be concluded , no halucination is happening here
+-Its effectively able to give relation, matter of fact ..its forte seems to be the relations
