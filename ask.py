@@ -15,8 +15,8 @@ sys.path.insert(0, str(ROOT / "graph"))
 from graph.build_graph import build, edges_of
 
 load_dotenv()
-MODEL = "claude-sonnet-5-5"
-MAX_EDGES = 40
+MODEL = "claude-haiku-5-5"  # cheaper; switch back to "claude-sonnet-5-5" for harder questions
+MAX_EDGES = 25
 client = anthropic.Anthropic()
 
 # words in a question -> stakeholder node id
@@ -103,7 +103,7 @@ def ask(question: str, H) -> str:
     print(f"[using {len(used)} edges about: {', '.join(node_ids)}]")
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=3000,
+        max_tokens=1200,
         system=SYSTEM,
         messages=[{"role": "user", "content": f"{context}\n\nQUESTION: {question}"}],
     )
