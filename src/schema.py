@@ -100,3 +100,104 @@ class HyperedgeBase(BaseModel):
     when: When
     prov: proof
  
+@field_validator("participants")
+@classmethod
+def _no_duplicates(cls, v:list[str]) -> list[str]:
+    if len(v) != len(set(v)):
+        raise ValueError("participants must be unique")
+    return v
+
+@model_validator(mode="after")
+def _roles_are_participants(self)-> "HyperedgeBase":
+    stray = set(self.roles) - set(self.participants)
+    if stray:
+        raise ValueError(f"roles given for non-participants: {sorted(stray)}")
+    return self
+
+
+##sub category
+class Alliance(HyperedgeBase):
+    type: Literal["alliance"] = "alliance"
+    
+class FamilyTie(HyperedgeBase):
+    type: Literal["family_tie"] = "family_tie"
+    
+class CareerEvent(HyperedgeBase):
+    type: Literal["career_event"] = "career_event"
+    
+#this is kinda similar to beef with certain thing and leading to two or more distinct side    
+class Side(BaseModel):
+    members: list[str] = Field(min_length=1, description="node ids")
+    grievance: str #more so about why a has beef with b
+    stated_vs_revealed: str | None = Field(default=None, description="what they say publically and what they actually do in real life")
+    
+class Rivalry(HyperedgeBase):
+    """The Beef"""
+    
+    type: Literal["rivalry"] = "rivalry" # this is explaining the type fo the edge
+    #explaing what side of the fued they belong to 
+    side: list[Side] = Field(min_length=2, description="the sides of the rivalry"   )
+    cause_node: list[str] | None = Field(default_factory=list, description="the goal/value nodes that caused this rivalry")
+    intensity: Literal["mild", "serious", ""]
+    status: Literal["active", "resolved", "dormant"] = "unknown"    
+    
+@model_validator(mode="after")
+def _sides_are_participants(self) -> "Rivalry":
+    in_sides = {m for s in self.sides for m in s.members}
+    missing = in_sides - set(self.participants)
+    if missing:
+        raise ValueError(f"side members missing from participants: {sorted(missing)}")
+    return self
+
+## so thsi kinda like instantiation of the hyperedges class
+Hyperedge = Annotated[
+    Union[Alliance, FamilyTie, CareerEvent, Rivalry],
+    Field(discriminator="type"),
+]
+
+# ----------------------------------------------------------------------------
+# Graph: the whole thing. Checks that need to see ALL nodes and edges together.
+# ----------------------------------------------------------------------------
+class Graph(BaseModel):
+    cutoff_year: int = CUTOFF_YEAR
+    nodes: list[Node] = []
+    edges: list[Hyperedge] = []
+ 
+    @model_validator(mode="after")
+    def _check_graph(self) -> "Graph":
+        # Fast lookup table: node id -> node.
+        by_id = {n.id: n for n in self.nodes}
+        # No two nodes (or edges) may share an id.
+        if len(by_id) != len(self.nodes):
+            raise ValueError("duplicate node ids")
+        if len({e.id for e in self.edges}) != len(self.edges):
+            raise ValueError("duplicate edge ids")
+ 
+        # Cutoff check on every node's date.
+        for n in self.nodes:
+            self._check_date(n.when, f"node {n.id}")
+ 
+        for e in self.edges:
+            # Every id an edge mentions must really exist (no dangling links).
+            for pid in e.participants:
+                if pid not in by_id:
+                    raise ValueError(f"edge {e.id}: unknown participant '{pid}'")
+            # Drivers must exist AND be motive nodes (goal or value), not people or events.
+            for did in e.drivers:
+                if did not in by_id:
+                    raise ValueError(f"edge {e.id}: unknown driver '{did}'")
+                if by_id[did].kind not in ("goal", "value"):
+                    raise ValueError(f"edge {e.id}: driver '{did}' must be a goal or value node")
+            # Rivalry-only: the cause nodes must exist too.
+            if isinstance(e, Rivalry):
+                for cid in e.cause_nodes:
+                    if cid not in by_id:
+                        raise ValueError(f"edge {e.id}: unknown cause node '{cid}'")
+            # Cutoff check on every edge's date.
+            self._check_date(e.when, f"edge {e.id}")
+        return self
+ 
+    def _check_date(self, w: When | None, label: str) -> None:
+        # THE ANTI-LEAK RULE: reject anything dated after the cutoff year.
+        if w is not None and w.year is not None and w.year > self.cutoff_year:
+            raise ValueError(f"{label}: year {w.year} is after the cutoff {self.cutoff_year}")
