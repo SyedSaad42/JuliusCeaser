@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 import anthropic
+import httpx
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
@@ -16,8 +17,9 @@ from graph.build_graph import build, edges_of
 
 load_dotenv()
 MODEL = "claude-haiku-5-5"  # cheaper; switch back to "claude-sonnet-5-5" for harder questions
-MAX_EDGES = 25
-client = anthropic.Anthropic()
+MAX_EDGES = 35
+# the default connect timeout is only 5s, which a slow network's TLS handshake can exceed
+client = anthropic.Anthropic(timeout=httpx.Timeout(60.0, connect=30.0), max_retries=4)
 
 # words in a question -> stakeholder node id
 KEYWORDS = {
@@ -101,12 +103,15 @@ def ask(question: str, H) -> str:
         return "I couldn't tell which stakeholder you mean. Mention one by name (e.g. Brutus, Cassius, Antony, the Senate)."
     context, used = build_context(H, node_ids)
     print(f"[using {len(used)} edges about: {', '.join(node_ids)}]")
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=1200,
-        system=SYSTEM,
-        messages=[{"role": "user", "content": f"{context}\n\nQUESTION: {question}"}],
-    )
+    try:
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=2000,
+            system=SYSTEM,
+            messages=[{"role": "user", "content": f"{context}\n\nQUESTION: {question}"}],
+        )
+    except (anthropic.APIConnectionError, anthropic.APITimeoutError) as e:
+        return f"Couldn't reach the API ({type(e).__name__}). Check your internet/VPN and try again."
     return "".join(b.text for b in resp.content if b.type == "text").strip()
 
 
