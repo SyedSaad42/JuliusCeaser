@@ -11,7 +11,7 @@ For the database of this project i need character  database instead of the histo
 for this project i will stick with the main characters as stakeholder and will use llm to build the furthuer nodes desbing thier relation with parent and senate and family.
 
 # Stake holders
-we will construct in tier and for the mvp we will have tier A only
+we will construct in tier and for the mvp we will have tier A and tier c only 
 
 Tier A 
 Julius Caesar
@@ -20,6 +20,12 @@ Gaius Cassius Longinus
 Mark Antony
 Decimus Brutus
 Cicero
+
+Tier C
+The Senate (as a body)
+The Roman people (the plebs)
+Caesar’s veterans and army
+Former Pompey supporters pardoned by Caesar (for example Ligarius)
 
 
 # LLM for nodes...

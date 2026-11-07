@@ -1,0 +1,74 @@
+STAKEHOLDER: THE ROMAN PEOPLE (PLEBS URBANA)
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Group
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Citizens living in Rome, perhaps 750,000-1,000,000 people in total, most of them poor.
+- Formal power: they voted in assemblies, elected magistrates and passed laws. Under Caesar's dominance elections still took place, but Caesar influenced or chose many candidates.
+- Generally favourable to Caesar, who had long presented himself as their champion (popularis), but not unconditionally. Their mood could turn quickly.
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY (COMPOSITION)
+------------------------------------------------------------
+- Freeborn poor citizens, freedmen (former slaves) and their descendants, shopkeepers, artisans and labourers.
+- Many immigrants from Italy and the provinces.
+- Organised partly through neighbourhood associations (collegia), which Clodius had used in the 50s BCE for street politics. Caesar dissolved most collegia except ancient ones (46 BCE).
+- Housing: crowded apartment blocks (insulae), with fire and collapse common; rent was a constant burden.
+
+------------------------------------------------------------
+PERSONAL AMBITIONS (COLLECTIVE INTERESTS)
+------------------------------------------------------------
+- Cheap or free grain.
+- Relief from rent and debt.
+- Entertainment and public generosity: games, gladiators, feasts and donations.
+- Protection by the tribunes, whom they saw as their defenders.
+- Land in colonies for those willing to leave Rome.
+- Respect for traditional Roman pride. Many disliked anything resembling monarchy, a deep Roman taboo since the expulsion of the kings.
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- Julius Caesar: their leading patron, through laws, gifts and spectacles.
+- The tribunes of the plebs: their traditional champions.
+- Popular leaders past and present: memories of the Gracchi, Marius and Clodius; Antony and Fulvia were tied to Clodius's former network.
+- Dolabella: led debt-relief agitation in 47 BCE and was popular with debtors.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- The optimates and the Senate's old elite, seen as defenders of the rich.
+- Creditors and landlords.
+- Tension with Caesar when he cut the grain-dole list, banned the collegia or celebrated a triumph over fellow Romans.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- No organised military force, but the crowd could riot, intimidate assemblies and occupy the Forum, as in the Clodian street violence of the 50s and Dolabella's riots of 47 BCE, which Antony suppressed with soldiers.
+- Many citizens had relatives in the legions.
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE (AND GROUPS)
+------------------------------------------------------------
+- Caesar's measures affecting them (48-45 BCE):
+  * Debt relief (49-48 BCE): property valued at pre-war prices for repayment and interest already paid deducted. It helped but did not cancel debts.
+  * Rent relief (47 BCE): one year's rent remitted for cheaper housing in Rome.
+  * Grain dole reform (46 BCE): a census cut the recipients from about 320,000 to 150,000.
+  * Colonisation: about 80,000 citizens sent to colonies overseas.
+  * Gifts at the quadruple triumph (46 BCE): grain, oil and money (Suetonius: 300 sesterces per citizen, later 100 more), a public banquet on 22,000 tables, gladiator fights, a staged naval battle, wild-beast hunts and theatrical shows.
+  * Building: the Forum of Caesar and the temple of Venus Genetrix, dedicated in 46 BCE.
+  * The new calendar (46 BCE): the "year of confusion" of 445 days, then the Julian calendar from 1 January 45 BCE.
+- Mixed feelings: crowds cheered his victories over foreigners, but many resented the Spanish triumph (October 45 BCE) because it celebrated a victory over Roman citizens, the sons of Pompey.
+- Pompey: still remembered with affection. Pompey's statues, which the crowd had thrown down, were restored on Caesar's orders.
+- The Senate: often viewed with suspicion as the home of the rich.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (49-45 BCE)
+------------------------------------------------------------
+- 49 BCE: welcome Caesar's return to Rome; many fear proscriptions like Sulla's, which do not happen.
+- 48-47 BCE: debt crisis; riots under Caelius (48) and Dolabella (47); Antony suppresses the 47 riots with troops, killing many.
+- 46 BCE: enjoy the quadruple triumph games; many lose their place on the grain list after the census.
+- 45 BCE: the new calendar begins on 1 January; the Spanish triumph in October draws grumbling.
+
+Sources: Suetonius, Julius 38-42, 75, 78; Cassius Dio, Roman History 42-43; Plutarch, Life of Caesar 55-57; Appian, Civil Wars 2.101-106.

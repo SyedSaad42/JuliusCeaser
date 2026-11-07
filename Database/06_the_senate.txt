@@ -1,0 +1,79 @@
+STAKEHOLDER: THE ROMAN SENATE
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Group (institution)
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Traditionally the governing council of the Republic: it directed foreign policy, finance, provinces and religion, and its decrees (senatus consulta) carried great weight.
+- By 45 BCE its real power had collapsed. Caesar was dictator (for ten years from 46 BCE, renewed annually) and sole consul for most of 45. The Senate now mostly ratified what Caesar wanted.
+- Split internally between Caesar's appointees and loyalists, pardoned former Pompeians, and old nobles who resented his dominance but stayed silent.
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY (COMPOSITION)
+------------------------------------------------------------
+- Roughly 600 members under Sulla's reforms. Caesar expanded it to about 900 (by 45 BCE).
+- New members included Caesar's officers, centurions, sons of freedmen, Italian townsmen and provincials, including men from Gaul. Old families mocked them; jokes circulated about Gauls who had swapped trousers for the senator's broad-striped toga.
+- Old patrician and plebeian noble families (Claudii, Cornelii, Junii, Cassii, Aemilii and others) were now diluted by newcomers.
+- Many leading optimates had died in the civil war (Pompey, Cato, Metellus Scipio, Domitius Ahenobarbus, Afranius, Labienus), leaving the Senate without its traditional leadership.
+
+------------------------------------------------------------
+PERSONAL AMBITIONS (COLLECTIVE INTERESTS)
+------------------------------------------------------------
+- Prestige (dignitas) and the traditional right to share power.
+- Access to offices, provinces and honours, which now depended on Caesar's favour.
+- Survival and property security after confiscations.
+- For the old nobility: restoration of free elections and senatorial authority.
+- For new senators: keeping the positions Caesar gave them.
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- Caesarian bloc: his officers and appointees (Antony, Lepidus, Dolabella, Balbus, Oppius, Hirtius, Pansa, Decimus Brutus, Trebonius and others).
+- Pardoned Pompeians: Marcus Brutus, Cassius, Cicero, Marcellus and others, who owed their status to Caesar's clemency.
+- The equestrian order: traditional partners of senators in business and juries.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- Old nobility vs. Caesar's new men.
+- Pompeian survivors vs. Caesarian loyalists.
+- Senate vs. the tribunes and the urban crowd (an old tension).
+- Senate vs. Caesar's dominance: resentment grew, though open opposition was rare.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- As a body, almost none. The legions were loyal to Caesar, and Caesar appointed the governors and commanders.
+- Individual senators commanded armies only by Caesar's grant.
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE (AND GROUPS)
+------------------------------------------------------------
+- Julius Caesar: dominant figure. After Munda (news reached Rome on 20 April 45 BCE) the Senate voted him extravagant honours, including:
+  * 50 days of public thanksgiving;
+  * the title "Liberator" and a temple of Liberty;
+  * the permanent use of "Imperator" as part of his name;
+  * the right to wear triumphal dress at all festivals and a laurel wreath at all times;
+  * a statue in the temple of Quirinus (deified Romulus) inscribed "to the unconquered god";
+  * a statue among the kings of Rome on the Capitol;
+  * an ivory statue carried among the gods' images in the procession at the circus games.
+  Ancient writers suggest some senators voted these to flatter Caesar and others to make him hated.
+- Caesar's treatment of the Senate: he filled offices himself, increased the numbers of praetors and quaestors, and arranged consulships. On 31 December 45 BCE, when a consul died on the last day of the year, Caesar had Gaius Caninius Rebilus elected consul for the few remaining hours. Cicero joked that no one had breakfasted during Rebilus's consulship.
+- The tribunes: at Caesar's Spanish triumph (October 45 BCE) the tribune Pontius Aquila refused to stand as Caesar's chariot passed; Caesar reacted with angry sarcasm.
+- Cicero: its most eloquent voice, now largely silent in public.
+- The Roman people: some resentment that the Senate had become a rubber stamp; mixed feelings about Caesar's new senators.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (48-45 BCE)
+------------------------------------------------------------
+- 48 BCE: after Pharsalus, votes Caesar powers including a long dictatorship and the right to decide war and peace.
+- 46 BCE: after Thapsus, votes 40 days of thanksgiving and a dictatorship for ten years; makes Caesar "prefect of morals"; witnesses the quadruple triumph.
+- 46 BCE: Caesar pardons Marcellus in the Senate after senators plead for him (Cicero's Pro Marcello).
+- April 45 BCE: votes the post-Munda honours listed above.
+- 45 BCE: Caesar enlarges the Senate to about 900 members.
+- October 45 BCE: Caesar's Spanish triumph, celebrating a victory over fellow Romans, which offended many.
+- October 45 BCE: Caesar resigns his sole consulship; Quintus Fabius Maximus and Gaius Trebonius become suffect consuls.
+- 31 December 45 BCE: Fabius dies; Caninius Rebilus is made consul for a few hours.
+
+Sources: Cassius Dio, Roman History 43.14-50; Suetonius, Julius 41, 76-78, 80; Cicero, Letters to Atticus 12-13 and Letters to Friends 7.30; Appian, Civil Wars 2.106.

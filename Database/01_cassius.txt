@@ -1,0 +1,80 @@
+STAKEHOLDER: GAIUS CASSIUS LONGINUS
+Knowledge cutoff: 31 December 45 BCE (after Caesar's final civil-war victory at Munda, before 44 BCE)
+Type: Individual
+
+------------------------------------------------------------
+POLITICAL POSITION
+------------------------------------------------------------
+- Senator of praetorian-track standing, from the plebeian nobility (nobilis).
+- Originally an optimate: sided with Pompey and the Senate's leaders in the civil war (49-48 BCE).
+- Switched sides: surrendered to Caesar after Pharsalus (48 or 47 BCE), was pardoned and served as one of Caesar's legates.
+- In 46-45 BCE he lived quietly in Italy (Rome in 46, Brundisium in 45), holding no major command. A pardoned former enemy, now inside the Caesarian system but not part of its inner circle.
+
+------------------------------------------------------------
+FAMILY AND ANCESTRY
+------------------------------------------------------------
+- Gens Cassia: an old plebeian clan with several consuls. Family tradition included Spurius Cassius Vecellinus (early Republic, executed for allegedly seeking kingship) and Lucius Cassius Longinus Ravilla, a famously strict judge ("cui bono?").
+- Father: uncertain. Sometimes identified with an earlier Gaius Cassius Longinus (consul 73 BCE), but this is not secure.
+- Brothers: a Lucius Cassius Longinus is known; a Quintus Cassius Longinus (Caesarian tribune in 49 BCE) was a cousin.
+- Wife: Junia Tertia ("Tertulla"), daughter of Servilia and half-sister of Marcus Brutus. This made Cassius Brutus's brother-in-law and tied him to Servilia's household. Gossip in Suetonius links Caesar with Tertia; it is gossip, not established fact.
+- Children: at least one son.
+
+------------------------------------------------------------
+PERSONAL AMBITIONS
+------------------------------------------------------------
+- Military glory and recognition. He had real battlefield achievements in the East and expected honours to match.
+- High office: the praetorship and then the consulship, the normal goals of a man of his rank.
+- Sensitive about status and slights. Plutarch reports a grievance: lions Cassius had gathered at Megara for his planned aedile's games were seized when Caesar's general Calenus took the city (48 BCE).
+- Intellectual: studied Greek philosophy and rhetoric at Rhodes; by 46-45 BCE he had become an Epicurean and discussed Epicureanism with Cicero in letters (January 45 BCE).
+
+------------------------------------------------------------
+POLITICAL ALLIANCES
+------------------------------------------------------------
+- Crassus (died 53 BCE): his first patron; Cassius served as his quaestor.
+- Pompey and the optimates (49-48 BCE): his side in the civil war.
+- Caesar (from 48/47 BCE): pardoned him and employed him as a legate.
+- Brutus: family alliance by marriage. Their relationship was close but not always warm.
+- Cicero: friendly correspondence; Cicero congratulated him on his Syrian victory in 51 BCE.
+
+------------------------------------------------------------
+RIVALRIES
+------------------------------------------------------------
+- With Caesar's followers who outranked him despite fewer achievements. As a pardoned enemy he competed for favour against Caesar's long-standing loyalists.
+- With Brutus at times: they were rivals for honours, even though they were in-laws.
+- Ancient writers describe him as quick-tempered, proud, and openly hostile to anyone claiming absolute power. Plutarch tells a schoolboy story in which Cassius beat Faustus Sulla for boasting about his father Sulla's dictatorship.
+
+------------------------------------------------------------
+MILITARY INFLUENCE
+------------------------------------------------------------
+- One of the most capable officers of his generation.
+- Carrhae (53 BCE): quaestor to Crassus. He reportedly advised against the route and tactics that led to disaster, then led survivors out after the defeat.
+- Syria (52-51 BCE): as acting governor he held the province with weak forces, defended Antioch and defeated a Parthian force in 51 BCE. He was accused of harsh exactions.
+- Civil war (48 BCE): commanded a Pompeian fleet drawn from Syria, Phoenicia and Cilicia; burned Caesar's ships at Messana in Sicily and attacked others at Vibo.
+- In 45 BCE he held no army. His influence was reputation and experience, not troops.
+
+------------------------------------------------------------
+RELATIONSHIPS WITH OTHER PEOPLE
+------------------------------------------------------------
+- Julius Caesar: former enemy who pardoned him. Benefactor, but Cassius owed his position to Caesar's clemency, which can sit uneasily with a proud man.
+- Marcus Brutus: brother-in-law through Junia Tertia; same family network via Servilia.
+- Servilia: mother-in-law, a powerful political hostess and Caesar's former lover.
+- Cicero: friendly; exchanged letters on philosophy and politics.
+- Crassus: dead patron whose defeat he witnessed.
+- Pompey: dead former commander.
+- Mark Antony: no close tie recorded before 44 BCE.
+
+------------------------------------------------------------
+HISTORICAL ACTIONS (to end of 45 BCE)
+------------------------------------------------------------
+- c. 86-85 BCE (uncertain): born.
+- Youth: studies at Rhodes; learns Greek.
+- 53 BCE: quaestor under Crassus; survives Carrhae; escapes to Syria.
+- 52-51 BCE: defends Syria; victory over Parthians near Antioch (51).
+- 49 BCE: tribune of the plebs; leaves Rome with Pompey's party.
+- 48 BCE: Pompeian fleet commander; raids Caesar's ships in Sicily.
+- 48/47 BCE: surrenders to Caesar (Smith places this at the Hellespont; modern scholars debate the place and date) and is pardoned.
+- 47 BCE: serves Caesar as a legate in the East.
+- 46 BCE: in Rome; does not fight in Africa.
+- 45 BCE: at Brundisium; corresponds with Cicero as a new Epicurean.
+
+Sources: Plutarch, Life of Brutus 7-9 and Life of Crassus; Cicero, Letters to Friends 15 (letters to and from Cassius); Suetonius, Julius 50; Smith, Dictionary of Greek and Roman Biography ("Longinus, Cassius 12").
