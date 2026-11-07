@@ -12,9 +12,9 @@ CUTOFF_YEAR = -45 # AS we dont intend on having context for any later than that
 
 # we need to create some classes for the sanity reasons
 NodeKind= Literal["stakeholder", "person", "group","event", "power", "goal", "value"]
-PowerType= Literal["office", " military", "wealth", "influence", "legal_protection"]
+PowerType= Literal["office", "military", "wealth", "influence", "legal_protection"]
 Confidence = Literal["high","medium","low","unknown"]
-DatePrecision = Literal["day", "month","year","relative", "unkown"]
+DatePrecision = Literal["day", "month","year","relative", "unknown"]
 # we are using section for the resource reason as we have to build the neighbour nodes later
 Section = Literal["political_position","family_ancestry","personal_ambitions","political_alliances","rivalries","military_influence","relationships","historical_actions"] 
 
@@ -47,20 +47,20 @@ class When(BaseModel):
 #even though pydantic provides type validator but it only check one variable only ... but when
 # you have a class filled up with attributes, we need a model_validator to for validating the type
 
-@model_validator(mode="after") # so this gets called once the object is built
-#we are calling the validating function on the object ***When****
-
-def _precision_matches(self)-> "When":
+    @model_validator(mode="after") # so this gets called once the object is built
+    #we are calling the validating function on the object ***When****
     
-    #if year not there and precision not is unknown that mean halucination
-    # and thats exactly what we will kill
-    
-    if self.year is None and self.precision not in ("unknown","relative"):
-        raise ValueError("a date with no year must have precision 'relative' or 'unknown'")
-    #if the month is not none but the year exist.. haluucinationn
-    if self.month is not None and self.year is None:
-        raise ValueError("month given without a year")
-    return self
+    def _precision_matches(self)-> "When":
+        
+        #if year not there and precision not is unknown that mean halucination
+        # and thats exactly what we will kill
+        
+        if self.year is None and self.precision not in ("unknown","relative"):
+            raise ValueError("a date with no year must have precision 'relative' or 'unknown'")
+        #if the month is not none but the year exist.. haluucinationn
+        if self.month is not None and self.year is None:
+            raise ValueError("month given without a year")
+        return self
 
 
 
@@ -97,22 +97,22 @@ class HyperedgeBase(BaseModel):
     stance: str | None = None
     drivers: list[str] = Field(default_factory=list, description="ids of goal/value nodes behind it")
     conditions: list[str] = Field(default_factory=list, description="what had to be true / what would change it")
-    when: When
+    when: When = Field(default_factory=When)
     prov: proof
  
-@field_validator("participants")
-@classmethod
-def _no_duplicates(cls, v:list[str]) -> list[str]:
-    if len(v) != len(set(v)):
-        raise ValueError("participants must be unique")
-    return v
-
-@model_validator(mode="after")
-def _roles_are_participants(self)-> "HyperedgeBase":
-    stray = set(self.roles) - set(self.participants)
-    if stray:
-        raise ValueError(f"roles given for non-participants: {sorted(stray)}")
-    return self
+    @field_validator("participants")
+    @classmethod
+    def _no_duplicates(cls, v:list[str]) -> list[str]:
+        if len(v) != len(set(v)):
+            raise ValueError("participants must be unique")
+        return v
+    
+    @model_validator(mode="after")
+    def _roles_are_participants(self)-> "HyperedgeBase":
+        stray = set(self.roles) - set(self.participants)
+        if stray:
+            raise ValueError(f"roles given for non-participants: {sorted(stray)}")
+        return self
 
 
 ##sub category
@@ -136,18 +136,18 @@ class Rivalry(HyperedgeBase):
     
     type: Literal["rivalry"] = "rivalry" # this is explaining the type fo the edge
     #explaing what side of the fued they belong to 
-    side: list[Side] = Field(min_length=2, description="the sides of the rivalry"   )
-    cause_node: list[str] | None = Field(default_factory=list, description="the goal/value nodes that caused this rivalry")
-    intensity: Literal["mild", "serious", ""]
-    status: Literal["active", "resolved", "dormant"] = "unknown"    
+    sides: list[Side] = Field(min_length=2, description="the sides of the rivalry")
+    cause_nodes: list[str] = Field(default_factory=list, description="the goal/value nodes that caused this rivalry")
+    intensity: Literal["mild", "serious", "unknown"] = "unknown"
+    status: Literal["active", "resolved", "dormant", "unknown"] = "unknown"
     
-@model_validator(mode="after")
-def _sides_are_participants(self) -> "Rivalry":
-    in_sides = {m for s in self.sides for m in s.members}
-    missing = in_sides - set(self.participants)
-    if missing:
-        raise ValueError(f"side members missing from participants: {sorted(missing)}")
-    return self
+    @model_validator(mode="after")
+    def _sides_are_participants(self) -> "Rivalry":
+        in_sides = {m for s in self.sides for m in s.members}
+        missing = in_sides - set(self.participants)
+        if missing:
+            raise ValueError(f"side members missing from participants: {sorted(missing)}")
+        return self
 
 ## so thsi kinda like instantiation of the hyperedges class
 Hyperedge = Annotated[
