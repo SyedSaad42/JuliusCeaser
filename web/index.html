@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caesar's Rome</title>
+<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #090d18;
+    --panel: rgba(17, 23, 42, .74);
+    --line: rgba(160, 178, 255, .16);
+    --text: #e8ecf6;
+    --muted: #9aa6c4;
+    --accent: #7c9cff;
+    --rival: #ff6b6b;
+    --ally: #3ddc97;
+    --family: #6c8bff;
+    --career: #9aa3b5;
+  }
+  * { box-sizing: border-box; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  #bg { position: fixed; inset: 0; z-index: 0; }
+  .glow {
+    position: fixed; top: 0; left: 0; width: 560px; height: 560px; z-index: 0; pointer-events: none;
+    background: radial-gradient(circle, rgba(124,156,255,.20), rgba(124,156,255,0) 65%);
+    will-change: transform;
+  }
+  main { position: relative; z-index: 1; }
+  .hero {
+    min-height: min(100svh, 880px); display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px; padding: 32px 16px 20px;
+  }
+  header { text-align: center; max-width: 640px; }
+  h1 { margin: 0 0 6px; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.02em; font-weight: 700; }
+  header p { margin: 0; color: var(--muted); }
+  .panel {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+  .chat { width: min(760px, 100%); padding: 16px; }
+  #log { max-height: 46vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 2px 4px 8px; }
+  #log:empty { display: none; }
+  .msg { padding: 10px 14px; border-radius: 12px; max-width: 100%; overflow-wrap: anywhere; }
+  .msg.user { align-self: flex-end; background: rgba(124,156,255,.22); border: 1px solid rgba(124,156,255,.35); }
+  .msg.bot { background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+  .msg p { margin: 0 0 8px; } .msg p:last-child { margin-bottom: 0; }
+  .msg ul { margin: 4px 0 8px; padding-left: 20px; } .msg li { margin: 4px 0; }
+  .cite {
+    font: inherit; font-size: .78rem; color: var(--accent); background: rgba(124,156,255,.12);
+    border: 1px solid rgba(124,156,255,.4); border-radius: 999px; padding: 0 8px; margin-left: 6px; cursor: pointer;
+  }
+  .cite:hover { background: rgba(124,156,255,.28); }
+  details { margin-top: 8px; color: var(--muted); font-size: .85rem; }
+  details pre { margin: 6px 0 0; white-space: pre-wrap; font: .8rem/1.4 ui-monospace, Consolas, monospace; }
+  .dots span { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%;
+    background: var(--accent); animation: bounce 1s infinite ease-in-out; }
+  .dots span:nth-child(2) { animation-delay: .15s; } .dots span:nth-child(3) { animation-delay: .3s; }
+  @keyframes bounce { 0%, 80%, 100% { opacity: .25; transform: scale(.8); } 40% { opacity: 1; transform: scale(1.1); } }
+  .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .examples button {
+    font: inherit; font-size: .85rem; color: var(--muted); background: transparent; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px;
+  }
+  .examples button:hover { color: var(--text); border-color: var(--accent); }
+  form { display: flex; gap: 8px; align-items: flex-end; }
+  textarea {
+    flex: 1; resize: none; min-height: 48px; max-height: 140px; padding: 12px 14px; color: var(--text);
+    background: rgba(0,0,0,.25); border: 1px solid var(--line); border-radius: 12px; font: inherit;
+  }
+  textarea::placeholder { color: var(--muted); }
+  select, .btn {
+    font: inherit; color: var(--text); background: rgba(255,255,255,.06); border: 1px solid var(--line);
+    border-radius: 12px; padding: 0 12px; height: 48px; cursor: pointer;
+  }
+  .btn.primary { background: var(--accent); color: #0a1030; border-color: transparent; font-weight: 600; padding: 0 20px; }
+  .btn:disabled { opacity: .55; cursor: wait; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .hint { color: var(--muted); text-decoration: none; font-size: .9rem; }
+  .hint:hover { color: var(--text); }
+  .graphwrap { width: min(1200px, calc(100% - 32px)); margin: 0 auto 48px; padding: 14px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 10px; }
+  .toolbar h2 { margin: 0 auto 0 0; font-size: 1.05rem; }
+  .toolbar label { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; color: var(--muted); cursor: pointer; }
+  .toolbar i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .toolbar .small { height: 34px; font-size: .85rem; padding: 0 12px; }
+  #netbox { position: relative; }
+  #net { height: 68vh; min-height: 420px; border-radius: 12px; background: rgba(0,0,0,.28); border: 1px solid var(--line); }
+  #netmsg { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); pointer-events: none; }
+  .zoom { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .zoom .btn { width: 36px; height: 36px; padding: 0; font-size: 1.1rem; }
+  .legend { color: var(--muted); font-size: .8rem; margin: 8px 2px 0; }
+  #tip {
+    position: fixed; z-index: 10; max-width: 340px; padding: 10px 12px; pointer-events: none; font-size: .85rem;
+    background: rgba(10,14,28,.96); border: 1px solid var(--line); border-radius: 10px; display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  }
+  #tip b { color: #fff; } #tip .k { color: var(--muted); } #tip q { color: #cdd6f4; font-style: italic; }
+  #tip div { margin-top: 4px; }
+  @media (max-width: 600px) { form { flex-wrap: wrap; } textarea { flex-basis: 100%; } }
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<main>
+  <section class="hero">
+    <header>
+      <h1>Caesar's Rome</h1>
+      <p>Ask about the people, alliances and rivalries of Rome. Answers come only from the graph below, as the world stood at the end of 45 BCE.</p>
+    </header>
+
+    <div class="chat panel">
+      <div id="log" role="log" aria-live="polite"></div>
+      <div class="examples" id="examples">
+        <button type="button">How are Cassius and Mark Antony connected?</button>
+        <button type="button">If Brutus was to go against Caesar, what could stop him?</button>
+        <button type="button">Would Antony ever betray Caesar?</button>
+      </div>
+      <form id="form">
+        <textarea id="q" rows="1" maxlength="500" placeholder="Ask a question..." aria-label="Your question"></textarea>
+        <select id="mode" aria-label="Answer mode">
+          <option value="agent">Agent</option>
+          <option value="simple">Quick</option>
+        </select>
+        <button class="btn primary" id="go" type="submit">Ask</button>
+      </form>
+    </div>
+    <a class="hint" href="#graph">Explore the graph &darr;</a>
+  </section>
+
+  <section class="graphwrap panel" id="graph">
+    <div class="toolbar">
+      <h2>The graph</h2>
+      <label><input type="checkbox" data-type="rivalry" checked><i style="background:var(--rival)"></i>Rivalry</label>
+      <label><input type="checkbox" data-type="alliance" checked><i style="background:var(--ally)"></i>Alliance</label>
+      <label><input type="checkbox" data-type="family_tie" checked><i style="background:var(--family)"></i>Family</label>
+      <label><input type="checkbox" data-type="career_event" checked><i style="background:var(--career)"></i>Career</label>
+      <button class="btn small" id="everything" type="button">Show everything</button>
+      <button class="btn small" id="reset" type="button">Reset</button>
+    </div>
+    <div id="netbox">
+      <div id="net"></div>
+      <div id="netmsg">Loading graph...</div>
+      <div class="zoom">
+        <button class="btn" id="zin" type="button" aria-label="Zoom in">+</button>
+        <button class="btn" id="zout" type="button" aria-label="Zoom out">&minus;</button>
+        <button class="btn" id="zfit" type="button" aria-label="Fit to screen">&#9635;</button>
+      </div>
+    </div>
+    <p class="legend">Small dots are relationships linking everyone they touch. Hover for details, scroll to zoom, drag to move, click a person to pull in everything they are part of.</p>
+  </section>
+</main>
+<div id="tip"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+/* ---------- animated background: drifting dots that react to the cursor ---------- */
+(() => {
+  const cv = $("#bg"), ctx = cv.getContext("2d"), glow = $("#glow");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, P = [];
+  const m = {x: -1e4, y: -1e4}, g = {x: innerWidth / 2, y: innerHeight / 2};
+
+  function size() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + "px"; cv.style.height = H + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(120, W * H / 13000));
+    P = Array.from({length: n}, () => {
+      const bx = (Math.random() - .5) * .3, by = (Math.random() - .5) * .3;
+      return {x: Math.random() * W, y: Math.random() * H, vx: bx, vy: by, bx, by, r: Math.random() * 1.6 + .7};
+    });
+  }
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of P) {
+      const dx = p.x - m.x, dy = p.y - m.y, d = Math.hypot(dx, dy);
+      if (d < 150 && d > 0.1) { const f = (1 - d / 150) * 0.35; p.vx += dx / d * f; p.vy += dy / d * f; }
+      p.vx += (p.bx - p.vx) * .02; p.vy += (p.by - p.vy) * .02;   // ease back to its own drift
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -10) p.x = W + 10; if (p.x > W + 10) p.x = -10;
+      if (p.y < -10) p.y = H + 10; if (p.y > H + 10) p.y = -10;
+    }
+    for (let i = 0; i < P.length; i++) {
+      const a = P[i];
+      for (let j = i + 1; j < P.length; j++) {
+        const b = P[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 120) { ctx.strokeStyle = `rgba(124,156,255,${(1 - d / 120) * .22})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+      const dm = Math.hypot(a.x - m.x, a.y - m.y);
+      if (dm < 180) { ctx.strokeStyle = `rgba(255,255,255,${(1 - dm / 180) * .45})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(m.x, m.y); ctx.stroke(); }
+      ctx.fillStyle = dm < 180 ? "rgba(255,255,255,.9)" : "rgba(170,190,255,.55)";
+      ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+    }
+    g.x += (m.x - g.x) * .08; g.y += (m.y - g.y) * .08;           // glow eases toward the cursor
+    glow.style.transform = `translate(${g.x - 280}px, ${g.y - 280}px)`;
+    if (!reduce) requestAnimationFrame(frame);
+  }
+
+  addEventListener("resize", size);
+  addEventListener("pointermove", e => { m.x = e.clientX; m.y = e.clientY; });
+  document.addEventListener("pointerleave", () => { m.x = m.y = -1e4; });
+  size();
+  if (reduce) { glow.style.display = "none"; }
+  frame();
+})();
+
+/* ---------- graph ---------- */
+const EDGE_COLOR = {rivalry: "#ff6b6b", alliance: "#3ddc97", family_tie: "#6c8bff", career_event: "#9aa3b5"};
+const NODE_COLOR = {stakeholder: "#ffb84d", person: "#7fb3ff", group: "#b794f4", event: "#a0a8b8",
+                    power: "#4fd1c5", goal: "#f6ad55", value: "#fc8181"};
+const TYPE_LABEL = {rivalry: "Rivalry", alliance: "Alliance", family_tie: "Family tie", career_event: "Career event"};
+const visible = {rivalry: true, alliance: true, family_tie: true, career_event: true};
+const nodes = new vis.DataSet(), links = new vis.DataSet();
+const meta = {nodes: {}, edges: {}};
+let network, settleTimer;
+
+function addPayload(p) {
+  const newNodes = [], newLinks = [];
+  for (const n of p.nodes) {
+    meta.nodes[n.id] = n;
+    if (!nodes.get(n.id)) newNodes.push({
+      id: n.id, label: n.name, shape: "dot", size: n.kind === "stakeholder" ? 22 : 10,
+      // other names only appear once you zoom in, so the overview stays readable
+      scaling: {label: {enabled: false, drawThreshold: n.kind === "stakeholder" ? 3 : 14, maxVisible: 30}},
+      color: {background: NODE_COLOR[n.kind] || "#ccc", border: "#ffffff55",
+              highlight: {background: NODE_COLOR[n.kind] || "#ccc", border: "#fff"}},
+      font: {size: n.kind === "stakeholder" ? 15 : 11, color: "#e8ecf6", strokeWidth: 3, strokeColor: "#090d18"},
+    });
+  }
+  for (const e of p.edges) {
+    meta.edges[e.id] = e;
+    const hub = "edge::" + e.id;
+    if (nodes.get(hub)) continue;
+    const col = EDGE_COLOR[e.type];
+    newNodes.push({id: hub, label: "", shape: "dot", size: 6, hidden: !visible[e.type],
+                   color: {background: col, border: col, highlight: {background: "#fff", border: col}}});
+    for (const pt of e.participants)
+      newLinks.push({id: hub + ">" + pt.id, from: hub, to: pt.id, width: 1, hidden: !visible[e.type],
+                     color: {color: col, opacity: .5, highlight: col}});
+  }
+  nodes.add(newNodes); links.add(newLinks);
+  return newNodes.length > 0;
+}
+
+function settle(fit) {
+  network.setOptions({physics: {enabled: true}});
+  clearTimeout(settleTimer);
+  settleTimer = setTimeout(() => {
+    network.setOptions({physics: {enabled: false}});
+    if (fit) network.fit({animation: {duration: 500}});
+  }, 2200);
+}
+
+async function fetchGraph(query) {
+  const r = await fetch("/graph" + query);
+  if (!r.ok) throw new Error("graph request failed");
+  return r.json();
+}
+
+async function loadDefault() {
+  $("#netmsg").style.display = "grid"; $("#netmsg").textContent = "Loading graph...";
+  nodes.clear(); links.clear();
+  try { addPayload(await fetchGraph("")); $("#netmsg").style.display = "none"; settle(true); }
+  catch (e) { $("#netmsg").textContent = "Could not load the graph."; }
+}
+
+function applyFilters() {
+  nodes.update(nodes.get({filter: n => String(n.id).startsWith("edge::")})
+    .map(n => ({id: n.id, hidden: !visible[meta.edges[n.id.slice(6)].type]})));
+  links.update(links.get().map(l => ({id: l.id, hidden: !visible[meta.edges[l.from.slice(6)].type]})));
+}
+
+function initNetwork() {
+  network = new vis.Network($("#net"), {nodes, edges: links}, {
+    interaction: {hover: true, tooltipDelay: 0, zoomView: true, dragView: true},
+    physics: {solver: "barnesHut", barnesHut: {gravitationalConstant: -9000, springLength: 170, springConstant: .04, damping: .35},
+              stabilization: false},
+    edges: {smooth: false}, layout: {improvedLayout: false},
+  });
+  network.on("hoverNode", p => showTip(nodeTip(p.node)));
+  network.on("blurNode", hideTip);
+  network.on("hoverEdge", p => {
+    const l = links.get(p.edge); if (!l) return;
+    const who = l.to, role = (meta.edges[l.from.slice(6)].participants.find(x => x.id === who) || {}).role;
+    if (role) showTip(`<b>${esc(meta.nodes[who].name)}</b><div class="k">${esc(role)}</div>`);
+  });
+  network.on("blurEdge", hideTip);
+  network.on("dragStart", hideTip);
+  network.on("click", async p => {
+    if (!p.nodes.length || String(p.nodes[0]).startsWith("edge::")) return;
+    const id = p.nodes[0];
+    try { if (addPayload(await fetchGraph("?focus=" + encodeURIComponent(id)))) settle(false); } catch (e) {}
+    network.focus(id, {scale: Math.max(network.getScale(), .9), animation: {duration: 500}});
+  });
+}
+
+function nodeTip(id) {
+  if (id.startsWith("edge::")) {
+    const e = meta.edges[id.slice(6)], names = e.participants.map(x => meta.nodes[x.id].name).join(", ");
+    let h = `<b>${esc(TYPE_LABEL[e.type])}</b><div>${esc(names)}</div>`;
+    if (e.stance) h += `<div>${esc(e.stance)}</div>`;
+    for (const s of e.sides) h += `<div class="k">${esc(s.members.join(", "))}: ${esc(s.grievance)}</div>`;
+    if (e.drivers.length) h += `<div class="k">Driven by: ${esc(e.drivers.join(", "))}</div>`;
+    if (e.when) h += `<div class="k">When: ${esc(e.when)}</div>`;
+    return h + `<div><q>&ldquo;${esc(e.quote)}&rdquo;</q></div><div class="k">${esc(e.source)}</div>`;
+  }
+  const n = meta.nodes[id];
+  return `<b>${esc(n.name)}</b> <span class="k">(${esc(n.kind)})</span>` + (n.note ? `<div>${esc(n.note)}</div>` : "")
+       + `<div class="k">Part of ${n.edges} relationship${n.edges === 1 ? "" : "s"}. Click to pull them in.</div>`;
+}
+
+const tip = $("#tip"), mouse = {x: 0, y: 0};
+addEventListener("pointermove", e => { mouse.x = e.clientX; mouse.y = e.clientY; if (tip.style.display === "block") placeTip(); });
+function placeTip() {
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(mouse.x + 16, innerWidth - w - 8) + "px";
+  tip.style.top = Math.min(mouse.y + 16, innerHeight - h - 8) + "px";
+}
+function showTip(html) { tip.innerHTML = html; tip.style.display = "block"; placeTip(); }
+function hideTip() { tip.style.display = "none"; }
+
+async function highlight(ids) {
+  for (const t of Object.keys(visible)) visible[t] = true;
+  document.querySelectorAll(".toolbar input[data-type]").forEach(c => c.checked = true);
+  try { addPayload(await fetchGraph("?ids=" + encodeURIComponent(ids.join(",")))); } catch (e) { return; }
+  applyFilters();
+  const hubs = ids.map(i => "edge::" + i).filter(h => nodes.get(h));
+  if (!hubs.length) return;
+  const people = new Set(hubs.flatMap(h => meta.edges[h.slice(6)].participants.map(p => p.id)));
+  const sel = [...hubs, ...people];
+  $("#graph").scrollIntoView({behavior: "smooth", block: "start"});
+  settle(false);
+  network.selectNodes(sel);
+  setTimeout(() => network.fit({nodes: sel, animation: {duration: 600}}), 700);
+}
+
+$(".toolbar").addEventListener("change", e => {
+  const t = e.target.dataset.type; if (!t) return;
+  visible[t] = e.target.checked; applyFilters();
+});
+$("#everything").onclick = async () => {
+  try { addPayload(await fetchGraph("?all=true")); applyFilters(); settle(true); } catch (e) {}
+};
+$("#reset").onclick = () => {
+  for (const t of Object.keys(visible)) visible[t] = true;
+  document.querySelectorAll(".toolbar input[data-type]").forEach(c => c.checked = true);
+  loadDefault();
+};
+const zoom = f => network.moveTo({scale: network.getScale() * f, animation: {duration: 200}});
+$("#zin").onclick = () => zoom(1.35);
+$("#zout").onclick = () => zoom(1 / 1.35);
+$("#zfit").onclick = () => network.fit({animation: {duration: 400}});
+
+/* ---------- chat ---------- */
+function renderAnswer(text) {
+  const inline = l => l
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\[([a-z0-9_]+(?:\s*[,;]\s*[a-z0-9_]+)*)\]/g, (m, ids) => {
+      const a = ids.split(/[,;]/).map(s => s.trim());
+      return `<button type="button" class="cite" data-ids="${a.join(",")}" title="Show on the graph">${a.length} source${a.length > 1 ? "s" : ""}</button>`;
+    });
+  let html = "", open = false;
+  for (const l of esc(text).split("\n")) {
+    if (/^\s*[-*]\s+/.test(l)) { if (!open) { html += "<ul>"; open = true; } html += "<li>" + inline(l.replace(/^\s*[-*]\s+/, "")) + "</li>"; }
+    else { if (open) { html += "</ul>"; open = false; } if (l.trim()) html += "<p>" + inline(l) + "</p>"; }
+  }
+  return html + (open ? "</ul>" : "");
+}
+
+const log = $("#log"), q = $("#q"), go = $("#go");
+function addMsg(cls, html) {
+  const d = document.createElement("div"); d.className = "msg " + cls; d.innerHTML = html;
+  log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
+}
+log.addEventListener("click", e => {
+  const b = e.target.closest(".cite"); if (b) highlight(b.dataset.ids.split(","));
+});
+document.querySelectorAll("#examples button").forEach(b => b.onclick = () => { q.value = b.textContent; q.focus(); });
+q.addEventListener("input", () => { q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 140) + "px"; });
+q.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("#form").requestSubmit(); } });
+
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const question = q.value.trim(); if (question.length < 3) return;
+  $("#examples").style.display = "none";
+  addMsg("user", esc(question)); q.value = ""; q.style.height = "auto"; go.disabled = true;
+  const wait = addMsg("bot", '<span class="dots"><span></span><span></span><span></span></span>');
+  try {
+    const r = await fetch("/ask", {method: "POST", headers: {"Content-Type": "application/json"},
+                                   body: JSON.stringify({question, mode: $("#mode").value})});
+    const d = await r.json();
+    if (!r.ok) throw new Error(typeof d.detail === "string" ? d.detail : "The request was not accepted.");
+    let html = renderAnswer(d.answer);
+    if (d.tool_calls.length) html += `<details><summary>${d.tool_calls.length} graph lookups</summary><pre>${
+      esc(d.tool_calls.map(c => c.tool + "(" + JSON.stringify(c.args) + ")").join("\n"))}</pre></details>`;
+    wait.innerHTML = html;
+  } catch (err) { wait.innerHTML = "Something went wrong: " + esc(err.message); }
+  go.disabled = false; log.scrollTop = log.scrollHeight;
+});
+
+initNetwork();
+loadDefault();
+</script>
+</body>
+</html>

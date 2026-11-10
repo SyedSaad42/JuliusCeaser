@@ -289,7 +289,7 @@ def run_tool(H, tool: str, args: dict) -> str:
         return f"tool error: {type(e).__name__}: {e}"
 
 
-def ask(question: str, H) -> str:
+def ask(question: str, H, trace: list | None = None) -> str:
     messages = [{"role": "user", "content": question}]
     for step in range(MAX_STEPS + 1):
         last = step == MAX_STEPS  # out of rounds: force a final text answer
@@ -307,6 +307,8 @@ def ask(question: str, H) -> str:
         for b in resp.content:
             if b.type == "tool_use":
                 print(f"  -> {b.name}({json.dumps(b.input)})")
+                if trace is not None:  # lets the API return the tool calls it made
+                    trace.append({"tool": b.name, "args": b.input})
                 results.append({"type": "tool_result", "tool_use_id": b.id, "content": run_tool(H, b.name, b.input)})
         messages.append({"role": "user", "content": results})
     return "stopped: too many steps"
