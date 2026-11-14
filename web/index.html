@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Caesar's Rome</title>
-<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: dark;
@@ -23,7 +25,7 @@
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body {
     margin: 0; background: var(--bg); color: var(--text);
-    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font: 16px/1.55 "Parkinsans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
   #bg { position: fixed; inset: 0; z-index: 0; }
   .glow {
@@ -32,24 +34,32 @@
     will-change: transform;
   }
   main { position: relative; z-index: 1; }
-  .hero {
-    min-height: min(100svh, 880px); display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 20px; padding: 32px 16px 20px;
+  .hero { height: 100svh; min-height: 620px; display: flex; flex-direction: column; gap: 14px; padding: 18px 24px 24px; }
+  header { text-align: center; flex: none; }
+  h1 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.02em; font-weight: 700; }
+  header p { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
+  .stage { flex: 1; min-height: 0; display: grid; gap: 20px; width: min(1560px, 100%); margin: 0 auto;
+    grid-template-columns: minmax(0, 1.4fr) minmax(340px, 1fr); }
+  @media (max-width: 900px) {
+    .hero { height: auto; padding: 16px 12px 24px; }
+    .stage { grid-template-columns: minmax(0, 1fr); }
+    .examples button { text-align: left; }
+    .graphwrap { height: 62vh; min-height: 420px; }
+    .chat { min-height: 520px; }
   }
-  header { text-align: center; max-width: 640px; }
-  h1 { margin: 0 0 6px; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.02em; font-weight: 700; }
-  header p { margin: 0; color: var(--muted); }
   .panel {
     background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 20px 60px rgba(0,0,0,.35);
   }
-  .chat { width: min(760px, 100%); padding: 16px; }
-  #log { max-height: 46vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 2px 4px 8px; }
-  #log:empty { display: none; }
+  .chat { display: flex; flex-direction: column; min-height: 0; padding: 16px; }
+  #log { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 2px 4px 8px; }
+  #log:empty { align-items: center; justify-content: center; color: var(--muted); text-align: center; }
+  #log:empty::before { content: "Ask about anyone in the graph. Click a sources button in an answer to see those relationships in the graph."; max-width: 300px; }
   .msg { padding: 10px 14px; border-radius: 12px; max-width: 100%; overflow-wrap: anywhere; }
   .msg.user { align-self: flex-end; background: rgba(124,156,255,.22); border: 1px solid rgba(124,156,255,.35); }
   .msg.bot { background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+  .msg.broke { background: rgba(255,107,107,.1); border: 1px solid rgba(255,107,107,.45); }
   .msg p { margin: 0 0 8px; } .msg p:last-child { margin-bottom: 0; }
   .msg ul { margin: 4px 0 8px; padding-left: 20px; } .msg li { margin: 4px 0; }
   .cite {
@@ -84,29 +94,72 @@
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .hint { color: var(--muted); text-decoration: none; font-size: .9rem; }
   .hint:hover { color: var(--text); }
-  .graphwrap { width: min(1200px, calc(100% - 32px)); margin: 0 auto 48px; padding: 14px; }
+  .graphwrap { display: flex; flex-direction: column; min-height: 0; padding: 14px; }
   .toolbar { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 10px; }
-  .toolbar h2 { margin: 0 auto 0 0; font-size: 1.05rem; }
-  .toolbar label { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; color: var(--muted); cursor: pointer; }
+  .toolbar h2 { margin: 0; font-size: 1.05rem; }
+  .toolbar .status { margin: 0 auto 0 0; color: var(--muted); font-size: .85rem; }
+  .toolbar .key { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--muted); }
   .toolbar i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
   .toolbar .small { height: 34px; font-size: .85rem; padding: 0 12px; }
-  #netbox { position: relative; }
-  #net { height: 68vh; min-height: 420px; border-radius: 12px; background: rgba(0,0,0,.28); border: 1px solid var(--line); }
-  #netmsg { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); pointer-events: none; }
-  .zoom { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 6px; }
-  .zoom .btn { width: 36px; height: 36px; padding: 0; font-size: 1.1rem; }
-  .legend { color: var(--muted); font-size: .8rem; margin: 8px 2px 0; }
-  #tip {
-    position: fixed; z-index: 10; max-width: 340px; padding: 10px 12px; pointer-events: none; font-size: .85rem;
-    background: rgba(10,14,28,.96); border: 1px solid var(--line); border-radius: 10px; display: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-  }
-  #tip b { color: #fff; } #tip .k { color: var(--muted); } #tip q { color: #cdd6f4; font-style: italic; }
-  #tip div { margin-top: 4px; }
+  .framebox { position: relative; flex: 1; min-height: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #0b1020; }
+  #graphframe { display: block; width: 100%; height: 100%; border: 0; }
+  #graphloading { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 14px;
+    background: rgba(11,16,32,.94); color: var(--muted); font-size: .95rem; }
+  #graphloading[hidden] { display: none; }
+  .spinner { width: 34px; height: 34px; border: 3px solid rgba(124,156,255,.25); border-top-color: var(--accent);
+    border-radius: 50%; animation: spin .9s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 3s; } }
+  .legend { color: var(--muted); font-size: .78rem; margin: 8px 2px 0; flex: none; }
+  .toolbar { flex: none; }
+  .examples { flex: none; }
+  form { flex: none; }
+  .rightcol { display: flex; flex-direction: column; min-height: 0; }
+  .rightcol .chat { flex: 1; }
+  .chatbar { flex: none; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px 14px; }
+  @media (max-width: 1320px) { .chatbar { flex-wrap: wrap; } }
+  .links { display: flex; gap: 10px; align-items: center; padding-bottom: 14px; }
+  .says { display: flex; align-items: flex-end; gap: 12px; margin-left: auto; }
+  .me { height: 92px; width: auto; max-width: 110px; object-fit: contain; flex: none; margin-bottom: -1px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.4)); }
+  .me.fallback { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; margin-bottom: 8px;
+    background: var(--accent); color: #0a1030; font-weight: 700; font-size: 1.3rem; filter: none; }
+  .bubble { position: relative; margin: 0 0 38px; padding: 9px 14px; max-width: 150px; border-radius: 14px; background: #fff;
+    color: #10152a; font-size: .88rem; font-weight: 600; line-height: 1.35; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+  .bubble::after { content: ""; position: absolute; right: -7px; bottom: 14px; border: 7px solid transparent;
+    border-left-color: #fff; border-right-width: 0; }
+  .pill.hl { color: #0a1030; background: var(--accent); border-color: transparent; font-weight: 600;
+    animation: glow 2.4s ease-in-out infinite; }
+  .pill.hl:hover { background: #a3b8ff; }
+  @keyframes glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(124,156,255,.6); } 50% { box-shadow: 0 0 0 9px rgba(124,156,255,0); } }
+  @media (prefers-reduced-motion: reduce) { .pill.hl { animation: none; box-shadow: 0 0 0 3px rgba(124,156,255,.35); } }
+  .pill { color: var(--text); text-decoration: none; font-size: .88rem; padding: 5px 16px; border-radius: 999px;
+    border: 1px solid var(--line); background: rgba(255,255,255,.05); }
+  .pill:hover { border-color: var(--accent); background: rgba(124,156,255,.16); }
+  .info { width: min(980px, calc(100% - 32px)); margin: 0 auto 36px; padding: 30px clamp(18px, 4vw, 40px); scroll-margin-top: 16px; }
+  .info .eyebrow { margin: 0 0 6px; color: var(--accent); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+  .info h2 { margin: 0 0 10px; font-size: clamp(1.3rem, 2.6vw, 1.8rem); line-height: 1.25; letter-spacing: -.01em; }
+  .info h3 { margin: 22px 0 6px; font-size: 1.05rem; }
+  .info p, .info li { color: #c9d1ea; }
+  .info p { margin: 0 0 12px; }
+  .info .meta { color: var(--muted); font-size: .9rem; }
+  .info code { font: .88em ui-monospace, Consolas, monospace; padding: 1px 6px; border-radius: 6px; background: rgba(255,255,255,.08); color: var(--text); }
+  .info ul { margin: 6px 0 12px; padding-left: 20px; } .info li { margin: 6px 0; }
+  .info .btn.link { display: inline-flex; align-items: center; height: 42px; text-decoration: none; margin: 6px 0 4px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 16px 0; }
+  .card { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.03); }
+  .card h3 { margin: 6px 0 6px; font-size: 1rem; }
+  .card p { margin: 0; font-size: .92rem; }
+  .chip { display: inline-block; font-size: .72rem; padding: 1px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .chip.started { color: var(--ally); border-color: rgba(61,220,151,.5); }
+  .chip.planned { color: var(--accent); border-color: rgba(124,156,255,.5); }
+  .note { margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--accent); background: rgba(124,156,255,.08); border-radius: 0 10px 10px 0; }
+  .note p { margin: 0; font-size: .92rem; }
+  .totop { display: inline-block; margin-top: 14px; color: var(--muted); font-size: .88rem; text-decoration: none; }
+  .totop:hover { color: var(--text); }
   @media (max-width: 600px) { form { flex-wrap: wrap; } textarea { flex-basis: 100%; } }
 </style>
 </head>
-<body>
+<body id="top">
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="glow" id="glow" aria-hidden="true"></div>
 
@@ -114,51 +167,127 @@
   <section class="hero">
     <header>
       <h1>Caesar's Rome</h1>
-      <p>Ask about the people, alliances and rivalries of Rome. Answers come only from the graph below, as the world stood at the end of 45 BCE.</p>
+      <p>Ask about the people, alliances and rivalries of Rome. Answers come only from the graph, as the world stood at the end of 45 BCE.</p>
     </header>
 
-    <div class="chat panel">
-      <div id="log" role="log" aria-live="polite"></div>
-      <div class="examples" id="examples">
-        <button type="button">How are Cassius and Mark Antony connected?</button>
-        <button type="button">If Brutus was to go against Caesar, what could stop him?</button>
-        <button type="button">Would Antony ever betray Caesar?</button>
+    <div class="stage">
+      <section class="graphwrap panel" id="graph">
+        <div class="toolbar">
+          <h2>The graph</h2>
+          <p class="status" id="status">Relationships between the main figures</p>
+          <button class="btn small" id="everything" type="button">Show everything</button>
+          <button class="btn small" id="reset" type="button">Reset</button>
+        </div>
+        <div class="toolbar">
+          <span class="key"><i style="background:var(--rival)"></i>Rivalry</span>
+          <span class="key"><i style="background:var(--ally)"></i>Alliance</span>
+          <span class="key"><i style="background:var(--family)"></i>Family</span>
+          <span class="key"><i style="background:var(--career)"></i>Career</span>
+          <span class="key"><i style="border:2px solid #fff"></i>Used in answer</span>
+          <span class="key"><i style="border:2px solid #7c9cff"></i>Looked at</span>
+        </div>
+        <div class="framebox">
+          <iframe id="graphframe" src="/graph-view" title="Interactive relationship graph"></iframe>
+          <div id="graphloading" role="status" aria-live="polite"><div class="spinner"></div><div>Graph is getting built...</div></div>
+        </div>
+        <p class="legend">Small dots are relationships linking everyone they touch. Hover for details, scroll to zoom, drag to move.</p>
+      </section>
+
+      <div class="rightcol">
+      <div class="chatbar">
+        <nav class="links" aria-label="More about this project">
+          <a class="pill hl" href="#inspiration">Inspiration</a>
+          <a class="pill hl" href="#future">Future prospects</a>
+        </nav>
+        <div class="says">
+          <p class="bubble" role="note">I know, UI - looks AI slop</p>
+          <img class="me" src="/assets/me.png" alt="The creator of this page" height="92"
+               onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'me fallback', textContent: 'S', title: 'Put your photo at web/assets/me.png'}))">
+        </div>
       </div>
-      <form id="form">
-        <textarea id="q" rows="1" maxlength="500" placeholder="Ask a question..." aria-label="Your question"></textarea>
-        <select id="mode" aria-label="Answer mode">
-          <option value="agent">Agent</option>
-          <option value="simple">Quick</option>
-        </select>
-        <button class="btn primary" id="go" type="submit">Ask</button>
-      </form>
+      <div class="chat panel">
+        <div id="log" role="log" aria-live="polite"></div>
+        <div class="examples" id="examples">
+          <button type="button">How are Cassius and Mark Antony connected?</button>
+          <button type="button">If Brutus was to go against Caesar, what could stop him?</button>
+          <button type="button">Would Antony ever betray Caesar?</button>
+        </div>
+        <form id="form">
+          <textarea id="q" rows="1" maxlength="500" placeholder="Ask a question..." aria-label="Your question"></textarea>
+          <select id="mode" aria-label="Answer mode">
+            <option value="agent">Agent</option>
+            <option value="simple">Quick</option>
+          </select>
+          <button class="btn primary" id="go" type="submit">Ask</button>
+        </form>
+      </div>
+      </div>
     </div>
-    <a class="hint" href="#graph">Explore the graph &darr;</a>
   </section>
 
-  <section class="graphwrap panel" id="graph">
-    <div class="toolbar">
-      <h2>The graph</h2>
-      <label><input type="checkbox" data-type="rivalry" checked><i style="background:var(--rival)"></i>Rivalry</label>
-      <label><input type="checkbox" data-type="alliance" checked><i style="background:var(--ally)"></i>Alliance</label>
-      <label><input type="checkbox" data-type="family_tie" checked><i style="background:var(--family)"></i>Family</label>
-      <label><input type="checkbox" data-type="career_event" checked><i style="background:var(--career)"></i>Career</label>
-      <button class="btn small" id="everything" type="button">Show everything</button>
-      <button class="btn small" id="reset" type="button">Reset</button>
+  <section class="info panel" id="inspiration" aria-labelledby="insp-title">
+    <p class="eyebrow">Inspiration</p>
+    <h2 id="insp-title">From Local to Global: A Graph RAG Approach to Query-Focused Summarization</h2>
+    <p class="meta">Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt,
+      Dasha Metropolitansky, Robert Osazuwa Ness, Jonathan Larson &middot; Microsoft Research &middot; 2024 &middot; arXiv:2404.16130</p>
+    <a class="btn link primary" href="https://arxiv.org/abs/2404.16130" target="_blank" rel="noopener noreferrer">Read the paper &nearr;</a>
+
+    <h3>What the paper does</h3>
+    <p>Ordinary retrieval-augmented generation (RAG) fetches the text chunks that look most like the question. That works for
+      specific lookups, but it struggles with complex and deep lookups.
+      The paper's GraphRAG has an LLM read the documents and build a knowledge graph of entities and their relationships, then
+      prepares summaries of groups of closely related entities. To answer, each summary contributes a partial answer and the
+      partial answers are combined. On datasets of around a million tokens, the authors report answers that were more
+      comprehensive and more diverse than those from conventional RAG.</p>
+
+    <h3>What this project takes from it, and where it differs</h3>
+    <ul>
+      <li><strong>The shared idea:</strong>Then answer come from the graph instead of from raw chunks. Thus, the answer can be traced back to the evidence in the source documents Avoiding halucination.</li>
+        Here, an LLM reads each chunk of the source files and fits what it finds into a fixed graph schema. The checked results are saved as
+        <code>graph.json</code>, and HyperNetX builds the hypergraph structure from that file.</li>
+      <li><strong>Relationships with more than two sides:</strong> an alliance or a rivalry can link several people at once (a hypergraph), with each person's role.</li>
+      <li><strong>Evidence you can check:</strong> every fact carries a source quote, and code verifies that the quote appears word for word in the source.</li>
+      <li><strong>A fixed moment in time:</strong> nothing dated after 45 BCE is allowed in, so the world can be explored without knowing how the story ends.</li>
+      <li><strong>An agent that walks the graph:</strong> instead of pre-written community summaries, an agent follows links with tools to trace chains of reactions.</li>
+    </ul>
+    <div class="note"><p>This project is inspired by that paper. It is not affiliated with, or endorsed by, the authors.</p></div>
+    <a class="totop" href="#top">&uarr; Back to the chat</a>
+  </section>
+
+  <section class="info panel" id="future" aria-labelledby="future-title">
+    <p class="eyebrow">Future prospects</p>
+    <h2 id="future-title">Dry-running policy before it is made</h2>
+    <p>A graph of who wants what, and who is tied to whom, can be used to rehearse a decision: change something in the world,
+      then trace who it touches and how the reaction spreads. Every step points back to the evidence behind it.</p>
+
+    <div class="cards">
+      <div class="card"><span class="chip started">Started</span>
+        <h3>Trace the chain of reactions</h3>
+        <p>A policy touches certain goals and values. The agent follows them to the groups affected, then to who reacts to those groups.
+          Ask a "what if" question on this page and the graph shows what the answer used.</p></div>
+      <div class="card"><span class="chip planned">Planned</span>
+        <h3>Stakeholder maps for real policy</h3>
+        <p>Swap in documents about a modern issue, such as a bill, a regulator or industry groups. The same pipeline gives a map of who gains,
+          who loses, and the evidence trail behind each claim.</p></div>
+      <div class="card"><span class="chip planned">Planned</span>
+        <h3>Compare two versions of a policy</h3>
+        <p>Run both and see which relationships and motives each one disturbs, side by side.</p></div>
+      <div class="card"><span class="chip">Idea</span>
+        <h3>Stakeholders that speak for themselves</h3>
+        <p>Let each group answer in its own voice from its own part of the graph. It would cost more and needs strict controls on what each one may know.</p></div>
+      <div class="card"><span class="chip">Idea</span>
+        <h3>Big-picture questions</h3>
+        <p>Add community summaries, as in the GraphRAG paper, to answer questions such as "what are the main fault lines overall?"</p></div>
+      <div class="card"><span class="chip">Idea</span>
+        <h3>Worlds that change over time</h3>
+        <p>Keep snapshots by date to watch alliances and rivalries shift, and to test a decision at different moments.</p></div>
     </div>
-    <div id="netbox">
-      <div id="net"></div>
-      <div id="netmsg">Loading graph...</div>
-      <div class="zoom">
-        <button class="btn" id="zin" type="button" aria-label="Zoom in">+</button>
-        <button class="btn" id="zout" type="button" aria-label="Zoom out">&minus;</button>
-        <button class="btn" id="zfit" type="button" aria-label="Fit to screen">&#9635;</button>
-      </div>
-    </div>
-    <p class="legend">Small dots are relationships linking everyone they touch. Hover for details, scroll to zoom, drag to move, click a person to pull in everything they are part of.</p>
+
+    <div class="note"><p><strong>What this is not.</strong> It is a rehearsal tool, not a forecast. When the graph does not record a reaction, the agent
+      is inferring it and says so. The results are only as good as the source documents, and people, not the tool, should make the decision.</p></div>
+    <a class="totop" href="#top">&uarr; Back to the chat</a>
   </section>
 </main>
-<div id="tip"></div>
 
 <script>
 const $ = s => document.querySelector(s);
@@ -217,152 +346,40 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&
   frame();
 })();
 
-/* ---------- graph ---------- */
-const EDGE_COLOR = {rivalry: "#ff6b6b", alliance: "#3ddc97", family_tie: "#6c8bff", career_event: "#9aa3b5"};
-const NODE_COLOR = {stakeholder: "#ffb84d", person: "#7fb3ff", group: "#b794f4", event: "#a0a8b8",
-                    power: "#4fd1c5", goal: "#f6ad55", value: "#fc8181"};
-const TYPE_LABEL = {rivalry: "Rivalry", alliance: "Alliance", family_tie: "Family tie", career_event: "Career event"};
-const visible = {rivalry: true, alliance: true, family_tie: true, career_event: true};
-const nodes = new vis.DataSet(), links = new vis.DataSet();
-const meta = {nodes: {}, edges: {}};
-let network, settleTimer;
-
-function addPayload(p) {
-  const newNodes = [], newLinks = [];
-  for (const n of p.nodes) {
-    meta.nodes[n.id] = n;
-    if (!nodes.get(n.id)) newNodes.push({
-      id: n.id, label: n.name, shape: "dot", size: n.kind === "stakeholder" ? 22 : 10,
-      // other names only appear once you zoom in, so the overview stays readable
-      scaling: {label: {enabled: false, drawThreshold: n.kind === "stakeholder" ? 3 : 14, maxVisible: 30}},
-      color: {background: NODE_COLOR[n.kind] || "#ccc", border: "#ffffff55",
-              highlight: {background: NODE_COLOR[n.kind] || "#ccc", border: "#fff"}},
-      font: {size: n.kind === "stakeholder" ? 15 : 11, color: "#e8ecf6", strokeWidth: 3, strokeColor: "#090d18"},
-    });
-  }
-  for (const e of p.edges) {
-    meta.edges[e.id] = e;
-    const hub = "edge::" + e.id;
-    if (nodes.get(hub)) continue;
-    const col = EDGE_COLOR[e.type];
-    newNodes.push({id: hub, label: "", shape: "dot", size: 6, hidden: !visible[e.type],
-                   color: {background: col, border: col, highlight: {background: "#fff", border: col}}});
-    for (const pt of e.participants)
-      newLinks.push({id: hub + ">" + pt.id, from: hub, to: pt.id, width: 1, hidden: !visible[e.type],
-                     color: {color: col, opacity: .5, highlight: col}});
-  }
-  nodes.add(newNodes); links.add(newLinks);
-  return newNodes.length > 0;
+/* ---------- graph: the pyvis page, shown in a frame ---------- */
+const frame = $("#graphframe"), status = $("#status");
+const loading = $("#graphloading");
+let loadTimer;
+function setLoading(on) {                         // "Graph is getting built..." until the graph reports it is ready
+  loading.hidden = !on;
+  clearTimeout(loadTimer);
+  if (on) loadTimer = setTimeout(() => setLoading(false), 15000);   // never get stuck
 }
-
-function settle(fit) {
-  network.setOptions({physics: {enabled: true}});
-  clearTimeout(settleTimer);
-  settleTimer = setTimeout(() => {
-    network.setOptions({physics: {enabled: false}});
-    if (fit) network.fit({animation: {duration: 500}});
-  }, 2200);
-}
-
-async function fetchGraph(query) {
-  const r = await fetch("/graph" + query);
-  if (!r.ok) throw new Error("graph request failed");
-  return r.json();
-}
-
-async function loadDefault() {
-  $("#netmsg").style.display = "grid"; $("#netmsg").textContent = "Loading graph...";
-  nodes.clear(); links.clear();
-  try { addPayload(await fetchGraph("")); $("#netmsg").style.display = "none"; settle(true); }
-  catch (e) { $("#netmsg").textContent = "Could not load the graph."; }
-}
-
-function applyFilters() {
-  nodes.update(nodes.get({filter: n => String(n.id).startsWith("edge::")})
-    .map(n => ({id: n.id, hidden: !visible[meta.edges[n.id.slice(6)].type]})));
-  links.update(links.get().map(l => ({id: l.id, hidden: !visible[meta.edges[l.from.slice(6)].type]})));
-}
-
-function initNetwork() {
-  network = new vis.Network($("#net"), {nodes, edges: links}, {
-    interaction: {hover: true, tooltipDelay: 0, zoomView: true, dragView: true},
-    physics: {solver: "barnesHut", barnesHut: {gravitationalConstant: -9000, springLength: 170, springConstant: .04, damping: .35},
-              stabilization: false},
-    edges: {smooth: false}, layout: {improvedLayout: false},
-  });
-  network.on("hoverNode", p => showTip(nodeTip(p.node)));
-  network.on("blurNode", hideTip);
-  network.on("hoverEdge", p => {
-    const l = links.get(p.edge); if (!l) return;
-    const who = l.to, role = (meta.edges[l.from.slice(6)].participants.find(x => x.id === who) || {}).role;
-    if (role) showTip(`<b>${esc(meta.nodes[who].name)}</b><div class="k">${esc(role)}</div>`);
-  });
-  network.on("blurEdge", hideTip);
-  network.on("dragStart", hideTip);
-  network.on("click", async p => {
-    if (!p.nodes.length || String(p.nodes[0]).startsWith("edge::")) return;
-    const id = p.nodes[0];
-    try { if (addPayload(await fetchGraph("?focus=" + encodeURIComponent(id)))) settle(false); } catch (e) {}
-    network.focus(id, {scale: Math.max(network.getScale(), .9), animation: {duration: 500}});
-  });
-}
-
-function nodeTip(id) {
-  if (id.startsWith("edge::")) {
-    const e = meta.edges[id.slice(6)], names = e.participants.map(x => meta.nodes[x.id].name).join(", ");
-    let h = `<b>${esc(TYPE_LABEL[e.type])}</b><div>${esc(names)}</div>`;
-    if (e.stance) h += `<div>${esc(e.stance)}</div>`;
-    for (const s of e.sides) h += `<div class="k">${esc(s.members.join(", "))}: ${esc(s.grievance)}</div>`;
-    if (e.drivers.length) h += `<div class="k">Driven by: ${esc(e.drivers.join(", "))}</div>`;
-    if (e.when) h += `<div class="k">When: ${esc(e.when)}</div>`;
-    return h + `<div><q>&ldquo;${esc(e.quote)}&rdquo;</q></div><div class="k">${esc(e.source)}</div>`;
-  }
-  const n = meta.nodes[id];
-  return `<b>${esc(n.name)}</b> <span class="k">(${esc(n.kind)})</span>` + (n.note ? `<div>${esc(n.note)}</div>` : "")
-       + `<div class="k">Part of ${n.edges} relationship${n.edges === 1 ? "" : "s"}. Click to pull them in.</div>`;
-}
-
-const tip = $("#tip"), mouse = {x: 0, y: 0};
-addEventListener("pointermove", e => { mouse.x = e.clientX; mouse.y = e.clientY; if (tip.style.display === "block") placeTip(); });
-function placeTip() {
-  const w = tip.offsetWidth, h = tip.offsetHeight;
-  tip.style.left = Math.min(mouse.x + 16, innerWidth - w - 8) + "px";
-  tip.style.top = Math.min(mouse.y + 16, innerHeight - h - 8) + "px";
-}
-function showTip(html) { tip.innerHTML = html; tip.style.display = "block"; placeTip(); }
-function hideTip() { tip.style.display = "none"; }
-
-async function highlight(ids) {
-  for (const t of Object.keys(visible)) visible[t] = true;
-  document.querySelectorAll(".toolbar input[data-type]").forEach(c => c.checked = true);
-  try { addPayload(await fetchGraph("?ids=" + encodeURIComponent(ids.join(",")))); } catch (e) { return; }
-  applyFilters();
-  const hubs = ids.map(i => "edge::" + i).filter(h => nodes.get(h));
-  if (!hubs.length) return;
-  const people = new Set(hubs.flatMap(h => meta.edges[h.slice(6)].participants.map(p => p.id)));
-  const sel = [...hubs, ...people];
-  $("#graph").scrollIntoView({behavior: "smooth", block: "start"});
-  settle(false);
-  network.selectNodes(sel);
-  setTimeout(() => network.fit({nodes: sel, animation: {duration: 600}}), 700);
-}
-
-$(".toolbar").addEventListener("change", e => {
-  const t = e.target.dataset.type; if (!t) return;
-  visible[t] = e.target.checked; applyFilters();
+addEventListener("message", e => {
+  if (e.source === frame.contentWindow && e.data && e.data.type === "graph-ready") setLoading(false);
 });
-$("#everything").onclick = async () => {
-  try { addPayload(await fetchGraph("?all=true")); applyFilters(); settle(true); } catch (e) {}
-};
-$("#reset").onclick = () => {
-  for (const t of Object.keys(visible)) visible[t] = true;
-  document.querySelectorAll(".toolbar input[data-type]").forEach(c => c.checked = true);
-  loadDefault();
-};
-const zoom = f => network.moveTo({scale: network.getScale() * f, animation: {duration: 200}});
-$("#zin").onclick = () => zoom(1.35);
-$("#zout").onclick = () => zoom(1 / 1.35);
-$("#zfit").onclick = () => network.fit({animation: {duration: 400}});
+function showGraph(query, text) {
+  setLoading(true);
+  frame.src = "/graph-view" + query;
+  status.textContent = text;
+}
+setLoading(true);                                 // the first graph is loading right now
+function highlight(ids) {
+  showGraph("?ids=" + encodeURIComponent(ids.join(",")),
+            `Showing the ${ids.length} relationship${ids.length > 1 ? "s" : ""} behind that answer`);
+  if (innerWidth <= 900) $("#graph").scrollIntoView({behavior: "smooth", block: "start"});
+}
+// after an agent answer: show what it used (white rings) and what else it looked at (blue rings)
+function showTrace(d) {
+  const used = d.cited_edges || [], seen = d.visited_edges || [], nodes = d.visited_nodes || [];
+  if (!used.length && !seen.length) return;
+  const enc = a => encodeURIComponent(a.join(","));
+  showGraph(`?ids=${enc([...used, ...seen])}&cited=${enc(used)}&nodes=${enc(nodes)}`,
+            `Answer trace: ${used.length} relationship${used.length === 1 ? "" : "s"} used, ${seen.length} more examined`);
+  if (innerWidth <= 900) $("#graph").scrollIntoView({behavior: "smooth", block: "start"});
+}
+$("#everything").onclick = () => showGraph("?all=true", "Every relationship (crowded)");
+$("#reset").onclick = () => showGraph("", "Relationships between the main figures");
 
 /* ---------- chat ---------- */
 function renderAnswer(text) {
@@ -402,17 +419,20 @@ $("#form").addEventListener("submit", async e => {
     const r = await fetch("/ask", {method: "POST", headers: {"Content-Type": "application/json"},
                                    body: JSON.stringify({question, mode: $("#mode").value})});
     const d = await r.json();
-    if (!r.ok) throw new Error(typeof d.detail === "string" ? d.detail : "The request was not accepted.");
-    let html = renderAnswer(d.answer);
-    if (d.tool_calls.length) html += `<details><summary>${d.tool_calls.length} graph lookups</summary><pre>${
-      esc(d.tool_calls.map(c => c.tool + "(" + JSON.stringify(c.args) + ")").join("\n"))}</pre></details>`;
-    wait.innerHTML = html;
+    if (r.status === 402) {                     // the API account is out of credits
+      wait.className = "msg broke"; wait.innerHTML = "<strong>Out of API credits.</strong><br>" + esc(d.detail);
+    } else if (!r.ok) {
+      throw new Error(typeof d.detail === "string" ? d.detail : "The request was not accepted.");
+    } else {
+      let html = renderAnswer(d.answer);
+      if (d.tool_calls.length) html += `<details><summary>${d.tool_calls.length} graph lookups</summary><pre>${
+        esc(d.tool_calls.map(c => c.tool + "(" + JSON.stringify(c.args) + ")").join("\n"))}</pre></details>`;
+      wait.innerHTML = html;
+      showTrace(d);
+    }
   } catch (err) { wait.innerHTML = "Something went wrong: " + esc(err.message); }
   go.disabled = false; log.scrollTop = log.scrollHeight;
 });
-
-initNetwork();
-loadDefault();
 </script>
 </body>
 </html>

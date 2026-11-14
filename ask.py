@@ -26,6 +26,29 @@ MAX_EDGES = 35
 # the default connect timeout is only 5s, which a slow network's TLS handshake can exceed
 client = anthropic.Anthropic(timeout=httpx.Timeout(60.0, connect=30.0), max_retries=4)
 
+BROKE_MESSAGE = ("Sorry, the creator of this page is broke and has run out of API credits. "
+                 "Try again later, or tell them to top up.")
+
+
+class OutOfCredits(Exception):
+    """The Anthropic account has no credits left (or hit its spend limit)."""
+
+
+def is_credit_error(e: Exception) -> bool:
+    msg = str(e).lower()
+    return (getattr(e, "status_code", None) == 402 or "credit balance" in msg
+            or "purchase credits" in msg or "usage limits" in msg)
+
+
+def create_message(**kwargs):
+    """client.messages.create, but a credit/billing failure becomes OutOfCredits."""
+    try:
+        return client.messages.create(**kwargs)
+    except anthropic.APIStatusError as e:
+        if is_credit_error(e):
+            raise OutOfCredits(str(e)) from e
+        raise
+
 # words in a question -> stakeholder node id
 KEYWORDS = {
     "julius_caesar": r"caesar|ceaser|cesar|julius",
@@ -109,7 +132,7 @@ def ask_simple(question: str, H) -> str:  # old one-shot mode, kept for comparis
     context, used = build_context(H, node_ids)
     print(f"[using {len(used)} edges about: {', '.join(node_ids)}]")
     try:
-        resp = client.messages.create(
+        resp = create_message(
             model=MODEL,
             max_tokens=2000,
             system=SYSTEM,
@@ -131,6 +154,7 @@ AGENT_SYSTEM = """You answer questions about the world of Rome by exploring a kn
 HOW TO WORK
 - Start with find_node to get node ids (names are not ids). If a search finds nothing, try another spelling or one word.
 - Use get_edges / get_edge / neighbours to read facts, and connection to see how two people are linked. Follow links across several hops when the question needs it.
+- For a policy, decision or "what if": call policy_touches with a few keywords AND synonyms for the policy (the graph's wording may differ), then edges_driven_by on the promising goal/value nodes, then get_edge for the details and each edge's conditions (what would change it).
 - Make only the calls you need (at most about 8), then answer.
 
 RULES
@@ -178,7 +202,7 @@ def guard(messages: list, text: str) -> str:
             {"role": "user", "content": "Your answer used knowledge from outside the graph (events after 45 BCE). "
              "Rewrite it using ONLY facts from the tool results, in the same format. Treat Caesar as alive and in power."},
         ]
-        resp = client.messages.create(model=MODEL, max_tokens=2000, system=AGENT_SYSTEM, messages=messages,
+        resp = create_message(model=MODEL, max_tokens=2000, system=AGENT_SYSTEM, messages=messages,
                                       tools=TOOLS, tool_choice={"type": "none"})
         text = "".join(b.text for b in resp.content if b.type == "text").strip()
     return text if not LEAK.search(text) else "Answer withheld: it relied on knowledge outside the graph. Try rephrasing the question."
@@ -203,6 +227,13 @@ TOOLS = [
     {"name": "connection",
      "description": "Shortest chain of shared edges linking two nodes (multi-hop).",
      "input_schema": {"type": "object", "properties": {"node_a": {"type": "string"}, "node_b": {"type": "string"}}, "required": ["node_a", "node_b"]}},
+    {"name": "policy_touches",
+     "description": "Find who a policy or event touches. Pass a few keywords and synonyms describing it. Returns the goal/value nodes it matches, the edges (relationships) most affected, and the people/groups involved, ranked.",
+     "input_schema": {"type": "object", "properties": {"policy": {"type": "string", "description": "keywords and synonyms, e.g. 'land veterans settlement colonies'"}},
+                      "required": ["policy"]}},
+    {"name": "edges_driven_by",
+     "description": "Every relationship driven by one goal or value node (its id from policy_touches or find_node), with who is in it. Shows who else cares about the same motive.",
+     "input_schema": {"type": "object", "properties": {"node_id": {"type": "string"}}, "required": ["node_id"]}},
 ]
 
 TYPE_RANK = {"rivalry": 0, "alliance": 1, "family_tie": 2, "career_event": 3}
@@ -278,8 +309,81 @@ def tool_connection(H, node_a: str, node_b: str) -> str:
     return f"{len(path)} hop(s):\n" + "\n".join(reversed(path))
 
 
+STOPWORDS = {"that", "this", "with", "from", "have", "will", "would", "what", "when", "which", "their", "them",
+             "they", "into", "over", "than", "then", "also", "been", "were", "does", "about", "only", "some"}
+
+
+def _words(text: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z]{4,}", text.lower()) if w not in STOPWORDS}
+
+
+def tool_policy_touches(H, policy: str, limit: int = 8) -> str:
+    words = _words(policy)
+    if not words:
+        return "give a few descriptive keywords for the policy"
+    motives = {}  # goal/value node -> matched words
+    for nid, p in H.node_props.items():
+        if p["kind"] in ("goal", "value"):
+            m = words & _words(f"{p['name']} {p['note'] or ''}")
+            if m:
+                motives[nid] = m
+    scored = []  # (score, edge id, why)
+    for eid, p in H.edge_props.items():
+        text = " ".join([p["stance"] or "", *p["conditions"], *[name(H, d) for d in p["drivers"]]])
+        m = words & _words(text)
+        driven = [d for d in p["drivers"] if d in motives]
+        if m or driven:
+            scored.append((len(m) + 2 * len(driven), eid, sorted(m), driven))
+    if not scored and not motives:
+        return "nothing in the graph matches those keywords; try synonyms"
+    scored.sort(key=lambda t: -t[0])
+
+    people = {}
+    for score, eid, _, _ in scored:
+        for m in H.edges.elements[eid]:
+            people[m] = people.get(m, 0) + score
+    out = []
+    if motives:
+        out.append("MOTIVES matched (goal/value nodes):")
+        out += [f"{n} | {name(H, n)} | words: {', '.join(sorted(w))}" for n, w in list(motives.items())[:8]]
+    out.append(f"EDGES most affected ({len(scored)} match, top {min(limit, len(scored))}):")
+    for _, eid, m, driven in scored[:limit]:
+        why = (f"words: {', '.join(m)}" if m else "") + (f"; driven by {', '.join(name(H, d) for d in driven)}" if driven else "")
+        out.append(f"[{eid}] {H.edge_props[eid]['type']} | {', '.join(name(H, x) for x in H.edges.elements[eid])} | {why.strip('; ')}")
+    top = sorted(people.items(), key=lambda kv: -kv[1])[:10]
+    out.append("PEOPLE/GROUPS touched (id | name | kind | relevance):")
+    out += [f"{n} | {name(H, n)} | {H.node_props[n]['kind']} | {s}" for n, s in top]
+    return "\n".join(out)
+
+
+def tool_edges_driven_by(H, node_id: str, limit: int = 10) -> str:
+    if node_id not in H.node_props:
+        return f"unknown node id '{node_id}' (use find_node or policy_touches first)"
+    eids = [e for e, p in H.edge_props.items() if node_id in p["drivers"]]
+    if not eids:
+        return f"no edge is driven by '{node_id}'"
+    eids.sort(key=lambda e: TYPE_RANK[H.edge_props[e]["type"]])
+    lines = [f"[{e}] {H.edge_props[e]['type']} | {', '.join(name(H, m) for m in H.edges.elements[e])} | "
+             f"conditions: {'; '.join(H.edge_props[e]['conditions']) or 'none recorded'}" for e in eids[:limit]]
+    return f"{len(eids)} edges driven by {name(H, node_id)}, showing {len(lines)}:\n" + "\n".join(lines)
+
+
 TOOL_FUNCS = {"find_node": tool_find_node, "get_edges": tool_get_edges, "get_edge": tool_get_edge,
-              "neighbours": tool_neighbours, "connection": tool_connection}
+              "neighbours": tool_neighbours, "connection": tool_connection,
+              "policy_touches": tool_policy_touches, "edges_driven_by": tool_edges_driven_by}
+
+
+def examined_edges(H, tool: str, args: dict, out: str) -> list[str]:
+    """Edges the agent actually opened or walked (not the long lists a tool merely printed)."""
+    if tool == "get_edge":
+        ids = [args.get("edge_id")]
+    elif tool == "connection":
+        ids = re.findall(r"-\[([a-z0-9_]+)\]->", out)
+    elif tool in ("policy_touches", "edges_driven_by"):
+        ids = re.findall(r"^\[([a-z0-9_]+)\]", out, re.M)
+    else:
+        ids = []
+    return [i for i in dict.fromkeys(ids) if i in H.edge_props]
 
 
 def run_tool(H, tool: str, args: dict) -> str:
@@ -294,7 +398,7 @@ def ask(question: str, H, trace: list | None = None) -> str:
     for step in range(MAX_STEPS + 1):
         last = step == MAX_STEPS  # out of rounds: force a final text answer
         try:
-            resp = client.messages.create(
+            resp = create_message(
                 model=MODEL, max_tokens=2000, system=AGENT_SYSTEM, messages=messages, tools=TOOLS,
                 **({"tool_choice": {"type": "none"}} if last else {}),
             )
@@ -307,9 +411,10 @@ def ask(question: str, H, trace: list | None = None) -> str:
         for b in resp.content:
             if b.type == "tool_use":
                 print(f"  -> {b.name}({json.dumps(b.input)})")
-                if trace is not None:  # lets the API return the tool calls it made
-                    trace.append({"tool": b.name, "args": b.input})
-                results.append({"type": "tool_result", "tool_use_id": b.id, "content": run_tool(H, b.name, b.input)})
+                out = run_tool(H, b.name, b.input)
+                if trace is not None:  # lets the API return what the agent did, and which edges it looked at
+                    trace.append({"tool": b.name, "args": b.input, "edges": examined_edges(H, b.name, b.input, out)})
+                results.append({"type": "tool_result", "tool_use_id": b.id, "content": out})
         messages.append({"role": "user", "content": results})
     return "stopped: too many steps"
 
@@ -318,14 +423,20 @@ def main() -> None:
     args = [a for a in sys.argv[1:] if a != "--simple"]
     answer = ask_simple if "--simple" in sys.argv else ask
     H = build()
+    def run(q: str) -> str:
+        try:
+            return answer(q, H)
+        except OutOfCredits:
+            return BROKE_MESSAGE
+
     if args:
-        print("\n" + answer(" ".join(args), H))
+        print("\n" + run(" ".join(args)))
         return
     while True:
         q = input("\nquestion (blank to quit): ").strip()
         if not q:
             break
-        print("\n" + answer(q, H))
+        print("\n" + run(q))
 
 
 if __name__ == "__main__":

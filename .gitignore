@@ -18,4 +18,5 @@ venv/
 Thumbs.db
 
 # generated data (rebuild with python src/chunker.py)
-data/processed/
+data/processed/*
+!data/processed/graph.json

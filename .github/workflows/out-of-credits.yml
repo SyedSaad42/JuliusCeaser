@@ -1,0 +1,31 @@
+name: Out of API credits alert
+
+# The website calls GitHub's repository_dispatch API when the Anthropic account runs out of credits
+# (see alert_out_of_credits in api.py). This opens ONE issue, made by github-actions, so you get a
+# GitHub notification. While that issue stays open, no further issues are created.
+
+on:
+  repository_dispatch:
+    types: [out_of_credits]
+
+permissions:
+  issues: write
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open an issue unless one is already open
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          existing=$(gh issue list --repo "$REPO" --state open --search "Out of Anthropic API credits in:title" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "Issue #$existing is already open, nothing to do."
+          else
+            gh issue create --repo "$REPO" \
+              --title "Out of Anthropic API credits" \
+              --body "@$OWNER the website just hit an Anthropic credit/billing error, so /ask is returning the 'creator is broke' message to visitors. Top up credits at https://console.anthropic.com, then close this issue."
+          fi
