@@ -45,11 +45,15 @@ jobs:
         run: docker run -d --name app -p 8000:8000 -e ANTHROPIC_API_KEY=ci-dummy-key caesars-rome
       - name: Smoke test
         run: |
-          curl --fail --retry 30 --retry-delay 2 --retry-connrefused -s http://localhost:8000/health | tee health.json
+          # The app needs a few seconds to start. Docker's port is open before that, so curl first gets an
+          # empty reply, which only --retry-all-errors retries (--retry-connrefused is not enough).
+          CURL="curl --fail --silent --show-error --max-time 10 --retry 40 --retry-delay 2 --retry-all-errors"
+          $CURL -o health.json http://localhost:8000/health
+          cat health.json; echo
           grep -q '"assistant_ready":true' health.json
-          curl --fail -s -o /dev/null http://localhost:8000/
-          curl --fail -s -o /dev/null http://localhost:8000/graph-view
-          curl --fail -s -o /dev/null http://localhost:8000/assets/me.png
+          $CURL -o /dev/null http://localhost:8000/
+          $CURL -o /dev/null http://localhost:8000/graph-view
+          $CURL -o /dev/null http://localhost:8000/assets/me.png
       - name: Container logs
         if: failure()
         run: docker logs app
