@@ -13,7 +13,6 @@ If the Anthropic account runs out of credits, /ask answers 402 with a friendly m
 .github/workflows/out-of-credits.yml turns into an issue that notifies the repo owner.
 Needs GITHUB_DISPATCH_TOKEN (and optionally GITHUB_REPO) in the environment / .env.
 """
-import os
 import re
 import sys
 import time
@@ -39,6 +38,8 @@ import visualize as viz  # noqa: E402  (the pyvis graph page)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     app.state.H = agent.build()  # load graph.json once at startup
+    if not agent.API_KEY:
+        print("WARNING: ANTHROPIC_API_KEY is not set (or empty). The site loads, but /ask will answer 503.")
     app.state.degree = Counter(m for members in app.state.H.edges.elements.values() for m in members)
     yield
 
@@ -56,7 +57,7 @@ def alert_out_of_credits() -> None:
     if time.time() - _last_alert < NOTIFY_COOLDOWN:
         return
     _last_alert = time.time()
-    token, repo = os.getenv("GITHUB_DISPATCH_TOKEN"), os.getenv("GITHUB_REPO", "SyedSaad42/JuliusCeaser")
+    token, repo = agent.clean_env("GITHUB_DISPATCH_TOKEN"), agent.clean_env("GITHUB_REPO") or "SyedSaad42/JuliusCeaser"
     if not token:
         print("out of API credits, but GITHUB_DISPATCH_TOKEN is not set, so no GitHub alert was sent")
         return
@@ -100,7 +101,8 @@ def cited_ids(H, answer: str) -> list[str]:
 @app.get("/health")
 def health():
     H = app.state.H
-    return {"status": "ok", "nodes": len(H.node_props), "edges": len(H.edge_props)}
+    return {"status": "ok", "nodes": len(H.node_props), "edges": len(H.edge_props),
+            "assistant_ready": bool(agent.API_KEY)}  # false = no API key in this environment
 
 
 @app.post("/ask", response_model=AskResponse, responses={402: {"description": "Out of API credits"}})
@@ -119,6 +121,9 @@ def ask_question(req: AskRequest):
                   for a in [t["args"].get(k)] if a in H.node_props]
         return AskResponse(answer=answer, mode="agent", tool_calls=trace, cited_edges=cited,
                            visited_edges=list(dict.fromkeys(examined)), visited_nodes=list(dict.fromkeys(looked)))
+    except agent.NotConfigured as e:
+        print(f"ANTHROPIC_API_KEY problem: {e}")  # details stay in the server log, not in the response
+        raise HTTPException(503, "The assistant is not set up right now. Please try again later.")
     except agent.OutOfCredits:
         # returned (not raised) so the alert runs after the response is sent
         return JSONResponse({"detail": agent.BROKE_MESSAGE}, status_code=402,

@@ -1,0 +1,17 @@
+# Allowlist: nothing goes into the image unless it is listed here.
+# This keeps .env, .git, the raw data, caches and your notes out by default.
+# If you add a file the app needs at runtime, add it below.
+*
+
+!requirements.txt
+!api.py
+!ask.py
+!graph/build_graph.py
+!graph/visualize.py
+!web/
+!data/processed/graph.json
+
+# never, even inside the folders allowed above
+**/__pycache__
+**/*.pyc
+**/.env

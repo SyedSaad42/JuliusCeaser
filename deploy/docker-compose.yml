@@ -1,0 +1,35 @@
+# Lives on the server at /opt/caesars/docker-compose.yml (the deploy workflow copies it there).
+# Always run it with both env files, which is what remote-deploy.sh does:
+#   docker compose --env-file .env --env-file current.env up -d
+#
+#   .env          secrets and settings you wrote by hand: ANTHROPIC_API_KEY, GITHUB_DISPATCH_TOKEN, DOMAIN, ...
+#   current.env   IMAGE and IMAGE_TAG, written by remote-deploy.sh on every deploy
+
+services:
+  app:
+    image: ${IMAGE}:${IMAGE_TAG}
+    restart: unless-stopped
+    env_file: .env          # the app reads its secrets from here
+    expose:
+      - "8000"              # reachable by Caddy only, never from the internet directly
+    mem_limit: 1200m        # a runaway request cannot take the whole 2 GB server down
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"             # needed to get the HTTPS certificate
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data    # keeps the certificate across restarts
+      - caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+
+volumes:
+  caddy_data:
+  caddy_config:

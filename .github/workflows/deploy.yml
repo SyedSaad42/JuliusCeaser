@@ -1,0 +1,87 @@
+name: Deploy
+
+# After CI passes on main: build the image, push it to GitHub's container registry,
+# then connect to the EC2 server, start the new version and roll back if it is not healthy.
+#
+# One-time setup (repo settings -> Secrets and variables -> Actions):
+#   secrets:   EC2_HOST (the server's Elastic IP), EC2_USER (deploy), EC2_SSH_KEY (private key of the deploy user)
+#   variable:  DOMAIN (optional, e.g. 18-226-72-196.sslip.io; enables the final public health check)
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:   # lets you re-deploy by hand from the Actions tab
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false   # never interrupt a deploy that is half done
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SHA }}
+
+      - name: Image name (registry names must be lowercase)
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push the image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ env.SHA }}
+            ${{ env.IMAGE }}:latest
+          labels: org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Set up SSH
+        env:
+          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          HOST: ${{ secrets.EC2_HOST }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
+
+      - name: Copy the deploy files to the server
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+          SERVER_USER: ${{ secrets.EC2_USER }}
+        run: scp -i ~/.ssh/deploy_key deploy/docker-compose.yml deploy/Caddyfile deploy/remote-deploy.sh "$SERVER_USER@$HOST:/opt/caesars/"
+
+      - name: Deploy (rolls back by itself if the new version is not healthy)
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+          SERVER_USER: ${{ secrets.EC2_USER }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          printf %s "$GHCR_TOKEN" | ssh -i ~/.ssh/deploy_key "$SERVER_USER@$HOST" \
+            "bash /opt/caesars/remote-deploy.sh '$IMAGE' '$SHA' '$ACTOR'"
+
+      - name: Check the public site
+        if: vars.DOMAIN != ''
+        run: curl --fail --silent --show-error --retry 12 --retry-delay 5 --retry-all-errors "https://${{ vars.DOMAIN }}/health"
