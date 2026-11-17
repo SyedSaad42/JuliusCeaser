@@ -8,6 +8,7 @@ Default mode is an agent: the LLM calls tools (find_node, get_edges, get_edge, n
 connection) to search and walk the graph itself, so it can follow links across several hops.
 """
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -24,7 +25,16 @@ load_dotenv()
 MODEL = "claude-haiku-5-5"  # cheaper; switch back to "claude-sonnet-5-5" for harder questions
 MAX_EDGES = 35
 # the default connect timeout is only 5s, which a slow network's TLS handshake can exceed
-client = anthropic.Anthropic(timeout=httpx.Timeout(60.0, connect=30.0), max_retries=4)
+
+
+def clean_env(name: str) -> str | None:
+    """An env var without stray spaces or wrapping quotes (docker --env-file and pasted dashboard values keep them)."""
+    v = os.getenv(name)
+    return v.strip().strip("\"'").strip() or None if v else None
+
+
+API_KEY = clean_env("ANTHROPIC_API_KEY")
+client = anthropic.Anthropic(api_key=API_KEY, timeout=httpx.Timeout(60.0, connect=30.0), max_retries=4)
 
 BROKE_MESSAGE = ("Sorry, the creator of this page is broke and has run out of API credits. "
                  "Try again later, or tell them to top up.")
@@ -40,13 +50,23 @@ def is_credit_error(e: Exception) -> bool:
             or "purchase credits" in msg or "usage limits" in msg)
 
 
+class NotConfigured(Exception):
+    """No (or a rejected) Anthropic API key: a deployment mistake, not the visitor's fault."""
+
+
 def create_message(**kwargs):
-    """client.messages.create, but a credit/billing failure becomes OutOfCredits."""
+    """client.messages.create, but a credit/billing failure becomes OutOfCredits and a bad key NotConfigured."""
     try:
         return client.messages.create(**kwargs)
+    except anthropic.AuthenticationError as e:  # key rejected
+        raise NotConfigured(str(e)) from e
     except anthropic.APIStatusError as e:
         if is_credit_error(e):
             raise OutOfCredits(str(e)) from e
+        raise
+    except TypeError as e:  # the SDK raises this when no key is set at all
+        if "authentication method" in str(e):
+            raise NotConfigured(str(e)) from e
         raise
 
 # words in a question -> stakeholder node id
@@ -428,6 +448,8 @@ def main() -> None:
             return answer(q, H)
         except OutOfCredits:
             return BROKE_MESSAGE
+        except NotConfigured:
+            return "No valid ANTHROPIC_API_KEY is set. Add it to your .env file."
 
     if args:
         print("\n" + run(" ".join(args)))

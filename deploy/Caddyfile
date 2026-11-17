@@ -1,0 +1,12 @@
+# Caddy gets and renews a free HTTPS certificate for {$DOMAIN} by itself,
+# then passes every request on to the app container.
+{$DOMAIN} {
+	encode zstd gzip
+
+	# questions are short; refuse anything large
+	request_body {
+		max_size 16KB
+	}
+
+	reverse_proxy app:8000
+}

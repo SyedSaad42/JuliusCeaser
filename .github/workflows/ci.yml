@@ -1,0 +1,55 @@
+name: CI
+
+# Runs on every pull request and every push to main:
+#   1. lint + tests (no network, no API key needed)
+#   2. build the Docker image, start it, and check it really serves
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+      - name: Install
+        run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: ruff check .
+      - name: Tests
+        run: pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the image
+        run: docker build -t caesars-rome .
+      - name: Start the container
+        run: docker run -d --name app -p 8000:8000 -e ANTHROPIC_API_KEY=ci-dummy-key caesars-rome
+      - name: Smoke test
+        run: |
+          curl --fail --retry 30 --retry-delay 2 --retry-connrefused -s http://localhost:8000/health | tee health.json
+          grep -q '"assistant_ready":true' health.json
+          curl --fail -s -o /dev/null http://localhost:8000/
+          curl --fail -s -o /dev/null http://localhost:8000/graph-view
+          curl --fail -s -o /dev/null http://localhost:8000/assets/me.png
+      - name: Container logs
+        if: failure()
+        run: docker logs app

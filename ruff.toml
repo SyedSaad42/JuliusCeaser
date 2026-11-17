@@ -1,0 +1,7 @@
+# Only real bugs (syntax errors, undefined names, unused imports/variables); style is left alone.
+line-length = 120
+target-version = "py312"
+extend-exclude = ["data", "Docs", "prompts"]
+
+[lint]
+select = ["E9", "F"]
