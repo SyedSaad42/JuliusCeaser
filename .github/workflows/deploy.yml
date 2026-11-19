@@ -84,4 +84,5 @@ jobs:
 
       - name: Check the public site
         if: vars.DOMAIN != ''
-        run: curl --fail --silent --show-error --retry 12 --retry-delay 5 --retry-all-errors "https://${{ vars.DOMAIN }}/health"
+        timeout-minutes: 5   # never hang for ages if the site is unreachable
+        run: curl --fail --silent --show-error --connect-timeout 10 --max-time 20 --retry 12 --retry-delay 5 --retry-all-errors "https://${{ vars.DOMAIN }}/health"
